@@ -49,38 +49,60 @@ firebase = Firebase::Client.new(base_uri)
     downticks = scan_data_for_decrease
     prospective_events = upticks + downticks
 
-    p prospective_events.sort
-  end
-
-
-  def create_event
+    prospective_events.sort
   end
 
 # 0, 75, 95, 100, 137, 144
-end
+# end
 
-values.group_by {|v,i| (v-(sucker[i-1]) > -5) && (v-(sucker[i+1]) < 0) }
+# values.group_by {|v,i| (v-(sucker[i-1]) > -5) && (v-(sucker[i+1]) < 0) }
 
 
-[235, 863, 865, 867, 870, 871, 872, 873, 874, 1026, 1027, 1028, 1029, 1030, 1032]
+# [235, 863, 865, 867, 870, 871, 872, 873, 874, 1026, 1027, 1028, 1029, 1030, 1032]
 
 # sucker
 # y case: 863 - 865 = -2    x - sucker[x+1] < 0
 # y case: 863 - 235 = 628   x - sucker[x-1] > 5
-
-sucker.group_by.with_index{ |v,i| (sucker[i+1] != nil) && (v - sucker[i+1] < 0) && (v - sucker[i-1] > 5) }
-sucker.group_by{ |x| (x > start_point) && (x < start_point + 20) }
-
-master_array = []
-start_points.each do |starting_point|
-  sub_array = []
-  sucker.each do |data_point|
-    if data_point.to_i > starting_point.to_i && data_point.to_i < ((starting_point.to_i)+20)
-      sub_array << data_point
-    end
-  end
-  master_array << sub_array
+def get_starting_points
+  event_points = gather_event_data
+  group_by_results = event_points.group_by.with_index{ |v,i| (event_points[i+1] != nil) && (v - event_points[i+1] < 0) && (v - event_points[i-1] > 5) }
+  group_by_results[true]
 end
 
+# sucker.group_by{ |x| (x > start_point) && (x < start_point + 20) }
 
+
+def group_events
+  start_points = get_starting_points
+  event_points = gather_event_data
+  master_array = []
+
+  start_points.each do |starting_point|
+    sub_array = []
+    event_points.each do |data_point|
+      if data_point.to_i > starting_point.to_i && data_point.to_i < ((starting_point.to_i)+20)
+        sub_array << data_point
+      end
+    end
+    master_array << sub_array
+  end
+  master_array
+end
+
+def get_event_groups
+  events = []
+  ray = get_firebase_data
+  event_groups = group_events
+  event_groups = event_groups.reject{ |array| array.empty? }
+  event_groups.each do |subarray|
+    events << ray[subarray[0]..subarray[-1]]
+  end
+  events
+end
+
+# end
+
+  # next steps
+  # -find the duration of the event and store in the database
+  # - time of the subarray [-1] - subarray[0]
 
