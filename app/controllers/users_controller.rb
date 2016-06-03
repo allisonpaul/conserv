@@ -15,10 +15,6 @@ class UsersController < ApplicationController
   def create
   end
 
-  def messages
-  end
-
-
   def update
   end
 

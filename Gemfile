@@ -30,6 +30,7 @@ gem 'react-rails'
 gem 'simplecov', :require => false, :group => :test
 gem 'capybara'
 gem 'rails_12factor', group: :production
+gem 'firebase'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
