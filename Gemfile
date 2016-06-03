@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'react-rails'
 gem 'simplecov', :require => false, :group => :test
 gem 'capybara'
+gem 'rails_12factor', group: :production
 
 # Use Unicorn as the app server
 # gem 'unicorn'
