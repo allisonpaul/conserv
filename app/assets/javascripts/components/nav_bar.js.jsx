@@ -1,10 +1,10 @@
 var NavBar = React.createClass ({
   render: function(){
-    return()
+    return <ConservLogo />
   }
 
 })
 
 
 
-<ConservLogo />
+
