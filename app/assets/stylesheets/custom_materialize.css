@@ -1,0 +1,87 @@
+nav {
+  background-color: whitesmoke;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+}
+
+
+nav .brand-logo {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 0;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 992px) {
+  nav .brand-logo {
+   text-align: left;
+  }
+
+@media (max-width: 1085px){
+  .login-form{
+  padding-top: 40%;
+  }
+}
+
+#register-button{
+  position: relative;
+  margin-left: 30%;
+  margin-top: 2px;
+  color:whitesmoke;
+}
+
+@media (max-width: 700px){
+  .app-container {
+    position: absolute;
+    background: url("conserv");
+    min-height: 100%;
+  }
+}
+
+.btn, .btn-large {
+  text-decoration: none;
+  color: #fff;
+  background-color: #65756B;
+  text-align: center;
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+  cursor: pointer;
+}
+
+.input-field label {
+  color: #9EA792;
+  position: absolute;
+  top: 0.8rem;
+  left: 0.75rem;
+  font-size: 1rem;
+  cursor: text;
+  transition: .2s ease-out;
+  font-family: helvetica;
+}
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #CEDAC5;
+  box-shadow: 0 1px 0 0 #CEDAC5;
+}
+
+.row .col.s12 {
+  width: 75%;
+  margin: 0 auto;
+
+}
+
