@@ -1,4 +1,4 @@
-var EventSlot = React.createclass({
+var EventSlot = React.createClass({
   render: function(){
     return(
       <div className = "event-slot">
