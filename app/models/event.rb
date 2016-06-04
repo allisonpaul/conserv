@@ -100,6 +100,19 @@ def get_event_groups
   events
 end
 
+def create_events
+  events = get_event_groups
+  events.each do |event_array|
+    @Event.create(user_id: 1, points: event_array.length, range: "")
+  end
+end
+
+# date time stuff
+# starting_time =  event time as string
+# DateTime.strptime(starting_time, "%Y: %m: %d: %T")
+# starting_time.min - ending_time.min
+# or just do length / 2 on the damn array
+
 # end
 
   # next steps
