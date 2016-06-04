@@ -26,7 +26,8 @@ ActiveRecord::Schema.define(version: 20160604154653) do
   create_table "events", force: :cascade do |t|
     t.integer  "points"
     t.integer  "user_id"
-    t.string   "range"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
