@@ -1,5 +1,5 @@
 var HomePage = React.createClass({
   render: function() {
-    return <PieGraph />
+    return <LineGraph />
   }
 });

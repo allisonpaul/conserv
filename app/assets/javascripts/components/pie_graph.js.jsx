@@ -103,14 +103,7 @@ var PieGraph = React.createClass ({
 	}];
 	var width = 500, height = 500;
 
-	return(
-		if (this.state.data != undefined) {
-			return <div> <div id="legend"></div>
-			  { this.pieGraph(this.state.data.data) }
-			</div>
-		} else {
-			return <div></div>
-		}
-	);
-  }
+	return (
+			 <div></div>
+	)}
 })
