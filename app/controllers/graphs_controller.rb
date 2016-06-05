@@ -7,7 +7,6 @@ class GraphsController < ApplicationController
     @events.each do |event|
       data << {"date" => event.start_time.to_date.to_s, "points" => event.points.to_i}
     end
-    p data
     render json: {data: data}
   end
 
@@ -17,8 +16,8 @@ class GraphsController < ApplicationController
   end
 
   def pie
-
-    render json: {html: true}
+    data = current_user.house.get_users_and_points
+    render json: {data: data}
   end
 
 end
