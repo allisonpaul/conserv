@@ -1,4 +1,9 @@
 var ClaimEvent = React.createClass({
+  getUserEvents: function() {
+    request = $.ajax({
+      url: /events/
+    })
+  },
   render: function(){
     return(
       <div>

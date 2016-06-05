@@ -3,9 +3,9 @@ class User < ActiveRecord::Base
 
   has_many :houses
 
-  validates :username, :email, { presence: true }
-  validates :password_digest, { length: { minimum: 4}}
-  validates :email, { uniqueness: true }
+  # validates :username, :email, { presence: true }
+  # validates :password_digest, { length: { minimum: 4}}
+  # validates :email, { uniqueness: true }
 
 
 end
