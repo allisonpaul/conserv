@@ -1,4 +1,9 @@
 var NavBar = React.createClass ({
+  handleClick: function(destination){
+    this.props.onAction(destination);
+    $('.button-collapse').sideNav('hide')
+  },
+
   render: function(){
     return (
       <nav>
@@ -6,13 +11,18 @@ var NavBar = React.createClass ({
           <a href="/" className="brand-logo"><ConservLogo/></a>
           <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
           <ul className="right hide-on-med-and-down">
-            <li><a href="sass.html">User page</a></li>
+            <li><a onClick={this.handleClick} >User page</a></li>
             <li><a href="badges.html">House</a></li>
             <li><a href="collapsible.html">Settings</a></li>
             <li><a href="mobile.html">Invite Friends</a></li>
           </ul>
           <ul className="side-nav" id="mobile-demo">
-            <li><a href="sass.html">User page</a></li>
+            <li><a onClick={this.handleClick.bind(null, "userShow")} >User page</a></li>
+            <li><a onClick={this.handleClick.bind(null, "claimEvent")} >Claim Events</a></li>
+            <li><a onClick={this.handleClick.bind(null, "lineGraph")} >lineGraph </a></li>
+            <li><a onClick={this.handleClick.bind(null, "pieGraph")} >pieGraph </a></li>
+            <li><a onClick={this.handleClick.bind(null, "barGraph")} >barGraph</a></li>
+            <li><a onClick={this.handleClick.bind(null, "house")} >House Form</a></li>
             <li><a href="badges.html">House</a></li>
             <li><a href="collapsible.html">Settings</a></li>
             <li><a href="mobile.html">Invite Friends</a></li>
