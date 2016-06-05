@@ -1,4 +1,8 @@
-
+/*!
+ * Materialize v0.97.6 (http://materializecss.com)
+ * Copyright 2014-2015 Materialize
+ * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
+ */
 .materialize-red {
   background-color: #e51c23 !important;
 }
@@ -2161,7 +2165,7 @@
 
 /* ==========================================================================
    Materialize variables
-   ==========================================================================
+   ========================================================================== */
 /**
  * Table of Contents:
  *
@@ -3563,13 +3567,13 @@ input[type=range] + .thumb {
   right: auto;
 }
 
-/*.row .col.s12 {
+.row .col.s12 {
   width: 100%;
   margin-left: auto;
   left: auto;
   right: auto;
 }
-*/
+
 .row .col.offset-s1 {
   margin-left: 8.3333333333%;
 }
@@ -4090,8 +4094,8 @@ input[type=range] + .thumb {
 
 /*nav a {
   color: #fff;
-}*/
-
+}
+*/
 nav i,
 nav [class^="mdi-"], nav [class*="mdi-"],
 nav i.material-icons {
@@ -4125,27 +4129,27 @@ nav .button-collapse i {
   line-height: 56px;
 }
 
-/*nav .brand-logo {
+nav .brand-logo {
   position: absolute;
   color: #fff;
   display: inline-block;
   font-size: 2.1rem;
   padding: 0;
   white-space: nowrap;
-}*/
+}
 
-nav .brand-logo.center {
+/*nav .brand-logo.center {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-}
-/*
-@media only screen and (max-width: 992px) {
+}*/
+
+/*@media only screen and (max-width: 992px) {
   nav .brand-logo {
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-  }*/
+  }
   nav .brand-logo.left, nav .brand-logo.right {
     padding: 0;
     -webkit-transform: none;
@@ -4164,7 +4168,7 @@ nav .brand-logo.right {
   right: 0.5rem;
   padding: 0;
 }
-
+*/
 nav ul {
   margin: 0;
 }
@@ -4182,7 +4186,7 @@ nav ul li.active {
 nav ul a {
   transition: background-color .3s;
   font-size: 1rem;
-/*  color: #fff;*/
+  color: #fff;
   display: inline-block;
   padding: 0 15px;
   cursor: pointer;
@@ -4892,19 +4896,11 @@ small {
   line-height: inherit;
 }
 
-/*.btn, .btn-large {
-  text-decoration: none;
-  color: #fff;
-  background-color: #26a69a;
-  text-align: center;
-  letter-spacing: .5px;
-  transition: .2s ease-out;
-  cursor: pointer;
-}*/
 
-.btn:hover, .btn-large:hover {
+
+/*.btn:hover, .btn-large:hover {
   background-color: #2bbbad;
-}
+}*/
 
 .btn-floating {
   display: inline-block;
@@ -5614,7 +5610,7 @@ input[type=tel]:focus:not([readonly]) + label,
 input[type=number]:focus:not([readonly]) + label,
 input[type=search]:focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #CEDAC5;
+  color: #26a69a;
 }
 
 input:not([type]).valid, input:not([type]):focus.valid,
@@ -5642,8 +5638,8 @@ input[type=search].valid,
 input[type=search]:focus.valid,
 textarea.materialize-textarea.valid,
 textarea.materialize-textarea:focus.valid {
-  border-bottom: 1px solid #CEDAC5;
-  box-shadow: 0 1px 0 0 #CEDAC5;
+  border-bottom: 1px solid #4CAF50;
+  box-shadow: 0 1px 0 0 #4CAF50;
 }
 
 input:not([type]).valid + label:after,
@@ -5673,7 +5669,7 @@ input[type=search]:focus.valid + label:after,
 textarea.materialize-textarea.valid + label:after,
 textarea.materialize-textarea:focus.valid + label:after {
   content: attr(data-success);
-  color: #CEDAC5;
+  color: #4CAF50;
   opacity: 1;
 }
 
@@ -5780,7 +5776,7 @@ textarea.materialize-textarea + label:after {
   margin-top: 1rem;
 }
 
-/*.input-field label {
+.input-field label {
   color: #9e9e9e;
   position: absolute;
   top: 0.8rem;
@@ -5788,7 +5784,7 @@ textarea.materialize-textarea + label:after {
   font-size: 1rem;
   cursor: text;
   transition: .2s ease-out;
-}*/
+}
 
 .input-field label.active {
   font-size: 0.8rem;
@@ -8177,4 +8173,3 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     margin-bottom: 5em;
   }
 }
-*
