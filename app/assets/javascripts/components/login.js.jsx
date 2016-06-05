@@ -9,12 +9,10 @@ var Login = React.createClass({
     })
     request.done(function(response){
       if (response.errors) {
-        console.log(response)
         var errorsList = response.errors
         $(".errors").append(`<li> ${errorsList} </li>`)
       } else {
         this.props.onAction('main', { currentUserID: response.user_id, userLoggedIn: true })
-        console.log(response.user_id)
       }
     }.bind(this))
   },

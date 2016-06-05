@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get '/graphs/pie' => 'graphs#pie'
 
   get '/events' => 'events#index'
+  post '/events/claim' => 'events#claim'
 
 end

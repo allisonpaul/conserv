@@ -52,3 +52,15 @@ polyline {
     stroke-width: 2px;
     fill: none;
 }
+
+#legContent {
+    display: inline-block;
+    color: lightblue;
+    font-size: 2em;
+    text-align: center;
+    padding-top:5%;
+    height: 80px;
+    width: 250px;
+    border-radius: 10px;
+}
+

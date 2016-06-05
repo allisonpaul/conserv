@@ -1,6 +1,21 @@
 // const d3 = require('react-d3-library');
 
 var LineGraph = React.createClass ({
+  getInitialState: function(){
+    return {
+      data: undefined
+    }
+  },
+
+  componentWillMount: function(){
+    $.ajax({
+      url: '/graphs/line',
+      type: 'GET'
+    }).success(function(response){
+      this.setState({data: response});
+    }.bind(this));
+  },
+
   lineGraph: function(data) {
     // Set the dimensions of the canvas / graph
       var margin = {top: 30, right: 20, bottom: 30, left: 50},
@@ -8,7 +23,7 @@ var LineGraph = React.createClass ({
           height = 270 - margin.top - margin.bottom;
 
       // Parse the date / time  ---- this is wonky
-      var parseDate = d3.time.format("%d-%b-%y").parse;
+      var parseDate = d3.time.format("%Y-%m-%d").parse;
 
       // Set the ranges
       var x = d3.time.scale().range([0, width]);
@@ -16,10 +31,10 @@ var LineGraph = React.createClass ({
 
       // Define the axes
       var xAxis = d3.svg.axis().scale(x)
-          .orient("bottom").ticks(5);
+          .orient("bottom").ticks(3);
 
       var yAxis = d3.svg.axis().scale(y)
-          .orient("left").ticks(5);
+          .orient("left").ticks(3);
 
 
       // Define the line
@@ -38,7 +53,8 @@ var LineGraph = React.createClass ({
                     "translate(" + margin.left + "," + margin.top + ")");
 
 
-      data.forEach(function(d) {
+
+      data.forEach(function(d,i) {
         d.date = parseDate(d.date);
         d.points = +d.points;
       });
@@ -66,14 +82,9 @@ var LineGraph = React.createClass ({
   },
 
   render: function(){
-    var data = [{date: "1-May-12", points: 63}, {date: "1-May-13", points: 58},
-      {date: "1-May-14", points: 71}, {date: "1-May-15", points: 51}, {date: "1-May-16", points: 48},
-      {date: "1-May-17", points: 44}, {date: "1-May-18", points: 46}, {date: "1-May-19", points: 39}];
-
-    return (
-      <div>
-        { this.lineGraph(data) }
-      </div>
-    )
+    if(this.state.data != undefined) {
+      return <div> { this.lineGraph(this.state.data.data) } </div>
+      } else { return <div></div>
     }
+  },
 });
