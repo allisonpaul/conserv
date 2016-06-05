@@ -31,6 +31,8 @@ var App = React.createClass({
         return <PieGraph onAction={this.updateView} />
       case "barGraph":
         return <BarGraph onAction={this.updateView} />
+      case "house":
+        return <HouseForm onAction={this.updateView} />
     }
   },
   render: function(){
