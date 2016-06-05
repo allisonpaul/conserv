@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_many  :houses
+  belongs_to  :house
   has_many  :events
 
   # validates :username, :email, { presence: true }

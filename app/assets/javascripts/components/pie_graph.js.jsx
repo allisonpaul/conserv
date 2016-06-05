@@ -1,17 +1,17 @@
 var PieGraph = React.createClass ({
   getInitialState: function(){
-	return {
-	  data: undefined
-	}
+		return {
+		  data: undefined
+		}
   },
 
   componentWillMount: function(){
-	$.ajax({
-	  url: '/graphs/pie',
-	  type: 'GET'
-	}).success(function(response){
-	  this.setState({data: response});
-	}.bind(this));
+		$.ajax({
+		  url: '/graphs/pie',
+		  type: 'GET'
+		}).success(function(response){
+		  this.setState({data: response});
+		}.bind(this));
   },
 
   popoutPie: function(data, width, height) {
@@ -88,22 +88,11 @@ var PieGraph = React.createClass ({
 
 
   render: function(){
-	var data = [{
-		username: "dom",
-		points: 80
-	}, {
-		username: "allison",
-		points: 45
-	}, {
-		username: "sami",
-		points: 62
-	}, {
-		username: "dexter",
-		points: 110
-	}];
-	var width = 500, height = 500;
-
-	return (
-			 <div></div>
-	)}
-})
+  	console.log(this.state.data)
+		if (this.state.data != undefined) {
+      return <div> { this.popoutPie(this.state.data.data, 500, 500) } </div>
+    } else {
+			return <div></div>
+    }
+	},
+});
