@@ -7,7 +7,9 @@ class SessionsController < ActionController::Base
   def create
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
+      puts "session info--------------"
       session[:user_id] = @user.id
+      p session
       render json: { user_id: session[:user_id] }
     else
       @errors = "Invalid Credentials"

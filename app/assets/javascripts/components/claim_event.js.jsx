@@ -1,13 +1,18 @@
 var ClaimEvent = React.createClass({
   getUserEvents: function() {
-    request = $.ajax({
-      url: /events/
+    $.ajax({
+      url: '/events',
+      type: 'get'
+    })
+    .done(function(response){
+      console.log(response)
     })
   },
   render: function(){
     return(
-      <div>
+      <div className="soft-white-bg">
         <h1 className="claim-event">Claim a slot </h1>
+        { this.getUserEvents() }
       </div>
     );
   }

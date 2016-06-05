@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   # resources :users
   get '/graphs/line' => 'graphs#line'
+  get '/graphs/bar' => 'graphs#bar'
+  get '/graphs/pie' => 'graphs#pie'
+
+  get '/events' => 'events#index'
+
 end
