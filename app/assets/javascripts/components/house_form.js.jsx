@@ -7,21 +7,26 @@ var HouseForm = React.createClass({
       type: 'post',
       data: data
     }).success(function(response){
-      this.props.onAction('main')
-    });
+      if (response.errors) {
+        var errors = response.errors
+        $(".errors").append(`<li> ${errors} </li>`)
+      } else {
+        this.props.onAction('pie')
+      }
+    }.bind(this));
   },
 
   render: function(){
     return (
       <div className="house-form-page">
-        <h3> Create a house </h3>
+        <h5> create or find a house </h5>
         <div className="house-form">
           <form onSubmit={this.handleFormSubmit} className="col s12">
             <div className="row">
               <div className="input-field col s12">
                 <i className="material-icons prefix">store</i>
                 <input type="text" className="validate" name="name" />
-                <label>Give your house a name.</label>
+                <label>House name</label>
               </div>
               <div className="input-field col s12 center-align">
                 <button className="btn waves-effect waves-light" type="submit" name="action">
@@ -30,6 +35,10 @@ var HouseForm = React.createClass({
               </div>
             </div>
           </form>
+          <div className="errors-div">
+            <ul className="errors">
+            </ul>
+          </div>
         </div>
       </div>
     )

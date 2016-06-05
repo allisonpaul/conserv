@@ -9,9 +9,17 @@ class HousesController < ApplicationController
   end
 
   def create
-    @hosue = House.new
-    if @house.save
-
+    @house = House.find_or_create_by(name: params[:name])
+    @user = User.find(current_user.id)
+    if @user.house_id == nil
+      @house.save
+      @user.house_id = @house.id
+      @user.save
+      render json: { house_name: @house.name}
+    else
+      @errors = "You can only join one house!"
+      render json: { errors: @errors}
+    end
   end
 
 

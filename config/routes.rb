@@ -13,6 +13,6 @@ Rails.application.routes.draw do
 
   get '/houses' => 'houses#index'
   get '/houses/new' => 'houses#new'
-  post '/houses' => 'houese#create'
+  post '/houses' => 'houses#create'
 
 end
