@@ -32,6 +32,7 @@ gem 'simplecov', :require => false, :group => :test
 gem 'capybara'
 gem 'rails_12factor', group: :production
 gem 'firebase'
+gem 'sprockets_better_errors'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
