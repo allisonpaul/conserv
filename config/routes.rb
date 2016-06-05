@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   get '/events' => 'events#index'
   post '/events/claim' => 'events#claim'
 
+  get '/houses' => 'houses#index'
+  get '/houses/new' => 'houses#new'
+  post '/houses' => 'houses#create'
+
 end
