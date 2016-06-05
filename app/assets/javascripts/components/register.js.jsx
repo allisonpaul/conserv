@@ -19,8 +19,8 @@ var Register = React.createClass({
   },
   render: function(){
     return (
-      <div className="register-form">
-      <h1>Register</h1>
+      <div className="login-form">
+
         <form onSubmit={this.handleFormSubmit} className="col s12">
           <div className="row">
             <div className="input-field col s12">

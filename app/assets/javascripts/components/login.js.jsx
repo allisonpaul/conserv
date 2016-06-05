@@ -27,7 +27,7 @@ var Login = React.createClass({
   render: function(){
     return (
       <div className="login-form">
-      <h1>Login</h1>
+
         <form onSubmit={this.handleFormSubmit} className="col s12">
           <div className="row">
             <div className="input-field col s12">
@@ -47,11 +47,9 @@ var Login = React.createClass({
             </div>
           </div>
         </form>
-          <div className="row">
-            <div className="input-field col s12">
-             <a className="center-align" onClick={this.handleRegisterClick}>Register</a>
-            </div>
-          </div>
+
+             <a id="register-button" onClick={this.handleRegisterClick}>Register</a>
+
           <div className="errors-div">
             <ul className="errors">
             </ul>
