@@ -21,9 +21,31 @@ nav .brand-logo {
 
 #register-button{
   position: relative;
-  margin-left: 40%;
+  margin: 42%;
   margin-top: 2px;
-  color:whitesmoke;
+  color:#cedac5;
 }
 
+.login-form{
+  max-width: 35%;
+  margin-top: 15%;
+}
 
+.btn:hover, .btn-large:hover {
+  background-color: #9EA792;
+}
+
+button:focus {
+  outline: none;
+  background-color: #9EA792;
+}
+
+.btn, .btn-large {
+  text-decoration: none;
+  color: #fff;
+  background-color: #65756B;
+  text-align: center;
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+  cursor: pointer;
+}
