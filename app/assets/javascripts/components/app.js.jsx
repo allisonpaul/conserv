@@ -24,6 +24,10 @@ var App = React.createClass({
         return <Register onAction={this.updateView} />
       case "claimEvent":
         return <ClaimEvent onAction={this.updateView} />
+      case "house":
+        return <HouseForm onAction={this.updateView} />
+      case "pie":
+        return <PieGraph onAction={this.updateView} />
     }
   },
   render: function(){

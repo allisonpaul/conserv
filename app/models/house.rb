@@ -1,4 +1,5 @@
 class House < ActiveRecord::Base
+
   has_many :users
 
   def get_users_and_points
@@ -10,5 +11,4 @@ class House < ActiveRecord::Base
     end
     results
   end
-
 end
