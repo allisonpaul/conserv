@@ -8,8 +8,9 @@ var App = React.createClass({
   },
 
   updateView: function(newView, options = {}) {
-    this.setState({ screen: newView })
-    this.setState(options)
+
+    this.setState({ screen: newView });
+    this.setState(options);
   },
 
   updateScreenContent: function() {
@@ -24,11 +25,17 @@ var App = React.createClass({
         return <Register onAction={this.updateView} />
       case "claimEvent":
         return <ClaimEvent onAction={this.updateView} />
+      case "lineGraph":
+        return <LineGraph onAction={this.updateView} />
+      case "pieGraph":
+        return <PieGraph onAction={this.updateView} />
+      case "barGraph":
+        return <BarGraph onAction={this.updateView} />
     }
   },
   render: function(){
     return <div className="app-container">
-    < NavBar/>
+    < NavBar onAction={this.updateView} />
       {this.updateScreenContent()}
     </div>
   },

@@ -1,9 +1,9 @@
 var HomePage = React.createClass({
   render: function() {
     return <div>
-      <BarGraph />
-      <LineGraph />
-      <PieGraph />
+
+      <h1> WELCOME TO CONSERV. USE THE MENU TO NAVIGATE</h1>
+
     </div>
   }
 });
