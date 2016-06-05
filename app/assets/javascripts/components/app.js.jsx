@@ -18,7 +18,7 @@ var App = React.createClass({
         return <Login onAction={this.updateView} />
       case "main":
         if (this.state.userLoggedIn === true) {
-          return <Main />
+          return <HomePage />
         } else {
           return <Login />
         }
