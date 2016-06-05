@@ -18,7 +18,6 @@ var PieGraph = React.createClass ({
 
     var arc = d3.svg.arc()
         .padRadius(outerRadius)
-        .outerRadius(outerRadius)
         .innerRadius(innerRadius);
 
     var svg = d3.select("body").append("svg")
@@ -26,35 +25,19 @@ var PieGraph = React.createClass ({
         .attr("height", height)
         .attr("id", function() {
             return "pie"
-        }).attr("class", "legend")
+        })
         .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-    var counter = 0
-
     svg.selectAll("path")
         .data(pie(points))
-        .enter().append("path").attr("id", function(d, i) {
-            return "user" + i;
-        })
+        .enter().append("path")
         .each(function(d) {
             d.outerRadius = outerRadius - 20;
         })
         .attr("d", arc)
-        .on("click", arcTween(outerRadius, 0))
-        .text(function(d, i) {
-            return usernames[i];
-        }).style("color", "red")
-        .on("mouseout", arcTween(outerRadius - 20, 150))
-        .text(function(d, i) {
-            return usernames[i];
-        }).style("color", "red");
-
-    d3.select("body").append("p")
-        .text(function(d, i) {
-            return usernames[i];
-        })
-        .style("color", "gray");
+        .on("mouseover", arcTween(outerRadius, 0))
+        .on("mouseout", arcTween(outerRadius - 20, 150));
 
     function arcTween(outerRadius, delay) {
         return function() {
@@ -67,6 +50,7 @@ var PieGraph = React.createClass ({
             });
         };
     }
+
 },
 
 
