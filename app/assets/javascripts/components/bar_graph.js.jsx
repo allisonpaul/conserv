@@ -21,7 +21,7 @@ var BarGraph = React.createClass ({
         .text(function(d, i) { return dates[i] + "  " + points[i] + " points"; }).style("color", "lightblue")
         .transition().text(function(d, i) { return dates[i] + " " + points[i] + " points"; }).style("color", "whitesmoke");
 
-    console.log(d3.select(".chart").selectAll("div"))
+    console.log(d3.select("#chart").selectAll("div"))
   },
 
   render: function(){
@@ -31,7 +31,7 @@ var BarGraph = React.createClass ({
 
       return(
         <div>
-          <div className="chart"></div>
+          <div id="chart"></div>
           { this.renderBarGraph(data) }
         </div>
       );

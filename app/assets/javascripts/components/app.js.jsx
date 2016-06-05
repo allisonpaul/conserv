@@ -19,11 +19,11 @@ var App = React.createClass({
       case "main":
         if (this.state.userLoggedIn === true) {
           return <HomePage />
-        } else {
-          return <Login />
-        }
+        } else { return <Login /> }
       case "register":
         return <Register onAction={this.updateView} />
+      case "claimEvent":
+        return <ClaimEvent onAction={this.updateView} />
     }
   },
   render: function(){
