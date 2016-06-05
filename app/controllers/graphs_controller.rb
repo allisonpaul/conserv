@@ -17,8 +17,8 @@ class GraphsController < ApplicationController
   end
 
   def pie
-
-    render json: {html: true}
+    data = current_user.house.get_users_and_points
+    render json: {data: data}
   end
 
 end
