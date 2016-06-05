@@ -1,5 +1,10 @@
 var HomePage = React.createClass({
   render: function() {
-    return <ClaimEvent />
+    return (
+      <div>
+        <LineGraph />
+        <DropdownStructure/>
+      </div>
+    )
   }
-})
+});

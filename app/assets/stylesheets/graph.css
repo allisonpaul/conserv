@@ -45,12 +45,7 @@ path:hover {
 .tick {
     font-family: sans-serif;
 }
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    width: 960px;
-    height: 500px;
-    position: relative;
-}
+
 polyline {
     opacity: .3;
     stroke: black;
