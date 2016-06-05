@@ -40,7 +40,6 @@ var Register = React.createClass({
             </div>
             <div className="input-field col s12 center-align">
               <button className="btn waves-effect waves-light" type="submit" name="action">Submit
-                <i className="material-icons right">send</i>
               </button>
             </div>
           </div>
