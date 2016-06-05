@@ -1,0 +1,29 @@
+nav {
+  background-color: whitesmoke;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+}
+
+nav .brand-logo {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 0;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 992px) {
+  nav .brand-logo {
+   text-align: left;
+  }
+
+#register-button{
+  position: relative;
+  margin-left: 40%;
+  margin-top: 2px;
+  color:whitesmoke;
+}
+
+

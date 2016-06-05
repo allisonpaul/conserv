@@ -1,8 +1,4 @@
-/*!
- * Materialize v0.97.6 (http://materializecss.com)
- * Copyright 2014-2015 Materialize
- * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
- */
+
 .materialize-red {
   background-color: #e51c23 !important;
 }
@@ -2165,7 +2161,7 @@
 
 /* ==========================================================================
    Materialize variables
-   ========================================================================== */
+   ==========================================================================
 /**
  * Table of Contents:
  *
@@ -4138,13 +4134,13 @@ nav .button-collapse i {
   white-space: nowrap;
 }*/
 
-/*nav .brand-logo.center {
+nav .brand-logo.center {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-}*/
-
-/*@media only screen and (max-width: 992px) {
+}
+/*
+@media only screen and (max-width: 992px) {
   nav .brand-logo {
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -5588,7 +5584,7 @@ textarea.materialize-textarea[readonly="readonly"] + label {
   color: rgba(0, 0, 0, 0.26);
 }
 
-/*input:not([type]):focus:not([readonly]),
+input:not([type]):focus:not([readonly]),
 input[type=text]:focus:not([readonly]),
 input[type=password]:focus:not([readonly]),
 input[type=email]:focus:not([readonly]),
@@ -5603,7 +5599,7 @@ input[type=search]:focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #26a69a;
   box-shadow: 0 1px 0 0 #26a69a;
-}*/
+}
 
 input:not([type]):focus:not([readonly]) + label,
 input[type=text]:focus:not([readonly]) + label,
@@ -8181,3 +8177,4 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     margin-bottom: 5em;
   }
 }
+*
