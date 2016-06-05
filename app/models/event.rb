@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
     events = get_event_groups
     events.each do |event_array|
       Event.create(
-        user_id: incoming_user_id,
+        device_owner_id: incoming_user_id,
         points: event_array.length,
         start_time: DateTime.strptime(event_array[0][1]['time'], "%Y: %m: %d: %T"),
         end_time: DateTime.strptime(event_array[-1][1]['time'], "%Y: %m: %d: %T"),)

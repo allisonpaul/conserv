@@ -1,7 +1,23 @@
 // const d3 = require('react-d3-library');
 
 var LineGraph = React.createClass ({
+  getInitialState: function(){
+    return {
+      data: undefined
+    }
+  },
+
+  componentWillMount: function(){
+    $.ajax({
+      url: '/graphs/line',
+      type: 'GET'
+    }).success(function(response){
+      this.setState({data: response});
+    }.bind(this));
+  },
+
   lineGraph: function(data) {
+    console.log('hi')
     // Set the dimensions of the canvas / graph
       var margin = {top: 30, right: 20, bottom: 30, left: 50},
           width = 600 - margin.left - margin.right,
@@ -66,14 +82,9 @@ var LineGraph = React.createClass ({
   },
 
   render: function(){
-    var data = [{date: "1-May-12", points: 63}, {date: "1-May-13", points: 58},
-      {date: "1-May-14", points: 71}, {date: "1-May-15", points: 51}, {date: "1-May-16", points: 48},
-      {date: "1-May-17", points: 44}, {date: "1-May-18", points: 46}, {date: "1-May-19", points: 39}];
-
-    return (
-      <div>
-        { this.lineGraph(data) }
-      </div>
-    )
-    }
+    if(this.state.data != undefined) {
+      console.log(this.state.data.data)
+      return <div> { this.lineGraph(this.state.data.data) } </div>
+      } else { return <div></div> }
+  },
 });
