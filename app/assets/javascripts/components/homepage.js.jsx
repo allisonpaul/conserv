@@ -1,5 +1,9 @@
 var HomePage = React.createClass({
   render: function() {
-    return <PieGraph />
+    return <div>
+      <BarGraph />
+      <LineGraph />
+      <PieGraph />
+    </div>
   }
 });

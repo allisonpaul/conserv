@@ -1,5 +1,20 @@
 var BarGraph = React.createClass ({
-  renderBarGraph: function(data) {
+  getInitialState: function(){
+    return {
+      data: undefined
+    }
+  },
+
+  componentWillMount: function(){
+    $.ajax({
+      url: '/graphs/line',
+      type: 'GET'
+    }).success(function(response){
+      this.setState({data: response});
+    }.bind(this));
+  },
+
+  BarGraph: function(data) {
     var points = [];
     var dates = [];
 
@@ -25,15 +40,9 @@ var BarGraph = React.createClass ({
   },
 
   render: function(){
-      var data = [{date: "1-May-12", points: 63}, {date: "1-May-13", points: 58},
-        {date: "1-May-14", points: 71}, {date: "1-May-15", points: 51}, {date: "1-May-16", points: 48},
-        {date: "1-May-17", points: 44}, {date: "1-May-18", points: 46}, {date: "1-May-19", points: 39}];
-
-      return(
-        <div>
-          <div id="chart"></div>
-          { this.renderBarGraph(data) }
-        </div>
-      );
+    if(this.state.data != undefined) {
+      return <div> { this.BarGraph(this.state.data.data) } </div>
+      } else { return <div></div>
     }
+  },
 });

@@ -7,7 +7,6 @@ class GraphsController < ApplicationController
     @events.each do |event|
       data << {"date" => event.start_time.to_date.to_s, "points" => event.points.to_i}
     end
-    p data
     render json: {data: data}
   end
 
