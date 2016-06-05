@@ -28,25 +28,29 @@ var Login = React.createClass({
 
         <form onSubmit={this.handleFormSubmit} className="col s12">
           <div className="row">
-            <div className="input-field col s12">
+            <div className="input-field col s10">
               <i className="material-icons prefix">email</i>
               <input type="text" className="validate" name="email"/>
               <label>Email</label>
             </div>
-            <div className="input-field col s12">
+            </div>
+            <div className="row">
+            <div className="input-field col s10">
               <i className="material-icons prefix">lock</i>
               <input type="password" className="validate" name="password"/>
               <label>Password</label>
             </div>
-            <div className="input-field col s12 center-align">
+            </div>
+            <div className="row">
+            <div className="input-field col s10 center-align">
               <button className="btn waves-effect waves-light" type="submit" name="action">submit
 
               </button>
             </div>
-          </div>
+             <a id="register-button" className="input-field col s10 center-align" onClick={this.handleRegisterClick}>Register to conserv</a>
+            </div>
         </form>
 
-             <a id="register-button" onClick={this.handleRegisterClick}>Register</a>
 
           <div className="errors-div">
             <ul className="errors">

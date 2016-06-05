@@ -4129,22 +4129,22 @@ nav .button-collapse i {
   line-height: 56px;
 }
 
-nav .brand-logo {
+/*nav .brand-logo {
   position: absolute;
   color: #fff;
   display: inline-block;
   font-size: 2.1rem;
   padding: 0;
   white-space: nowrap;
-}
+}*/
 
-/*nav .brand-logo.center {
+nav .brand-logo.center {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-}*/
+}
 
-/*@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   nav .brand-logo {
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -4168,7 +4168,7 @@ nav .brand-logo.right {
   right: 0.5rem;
   padding: 0;
 }
-*/
+
 nav ul {
   margin: 0;
 }
@@ -4309,7 +4309,7 @@ html {
 
 @media only screen and (min-width: 0) {
   html {
-    font-size: 14px;
+    font-size: 24px;
   }
 }
 
@@ -4829,7 +4829,7 @@ small {
   will-change: top, left;
 }
 
-.backdrop {
+/*.backdrop {
   position: absolute;
   opacity: 0;
   display: none;
@@ -4841,10 +4841,11 @@ small {
   -webkit-transform-origin: 50% 10%;
           transform-origin: 50% 10%;
   will-change: transform, opacity;
-}
+}*/
 
 .btn, .btn-large,
 .btn-flat {
+  background-color: #65756b;
   border: none;
   border-radius: 2px;
   display: inline-block;
@@ -5464,7 +5465,7 @@ select:focus {
 
 button:focus {
   outline: none;
-  background-color: #2ab7a9;
+  background-color: #cedac5;
 }
 
 label {

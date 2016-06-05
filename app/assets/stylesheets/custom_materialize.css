@@ -1,3 +1,4 @@
+
 nav {
   background-color: whitesmoke;
   width: 100%;
@@ -14,22 +15,25 @@ nav .brand-logo {
   white-space: nowrap;
 }
 
-@media only screen and (max-width: 992px) {
+/*@media only screen and (max-width: 992px) {
   nav .brand-logo {
    text-align: left;
-  }
+  }*/
 
 #register-button{
-  position: relative;
-  margin: 42%;
-  margin-top: 2px;
   color:#cedac5;
+  font-family: helvetica;
 }
 
 .login-form{
-  max-width: 35%;
-  margin-top: 15%;
+margin-top: 15%;
+left:auto;
 }
+
+@media only screen and (max-width: 480px) {
+    table {
+        width:100%;
+    }
 
 .btn:hover, .btn-large:hover {
   background-color: #9EA792;
@@ -40,7 +44,7 @@ button:focus {
   background-color: #9EA792;
 }
 
-.btn, .btn-large {
+/*.btn, .btn-large {
   text-decoration: none;
   color: #fff;
   background-color: #65756B;
@@ -48,4 +52,36 @@ button:focus {
   letter-spacing: .5px;
   transition: .2s ease-out;
   cursor: pointer;
+}*/
+
+#container {
+  height: 100vh;
+  width: 100%
+  margin: 0;
+  padding: 0;
+
 }
+
+#drop-down-menu {
+  display: block;
+  margin-top: 500px;
+  border: 1px solid red;
+}
+
+/*  .app-container {
+  background: url("conserv") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    width: inherit;
+  height: inherit;
+
+  }
+*/
+
+.app-container{
+  height: 100vh;
+}
+
+
