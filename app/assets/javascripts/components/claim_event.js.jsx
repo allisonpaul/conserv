@@ -10,6 +10,7 @@ var ClaimEvent = React.createClass({
       url: '/events',
       type: 'get',
     }).success(function(response){
+      console.log(response)
         this.setState({data: response});
       }.bind(this));
   },
@@ -19,7 +20,6 @@ var ClaimEvent = React.createClass({
     return(
       <div className="soft-white-bg">
         <h1 className="claim-event">Claim a slot </h1>
-        <p>hi</p>
         <EventList events={this.state.data} />
       </div>
     );
