@@ -9,7 +9,8 @@ class EventsController < ApplicationController
 
   def generate_events
     e = Event.create
-    e.create_events(current_user.id)
+    e.create_events(1)
+    redirect_to '/'
   end
 
   def claim
