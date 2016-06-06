@@ -6,8 +6,16 @@
                 background-color: steelblue;
             }
         }
+.barChartContainer {
+  display: block;
+  position: relative;
+  margin-left: 5%;
+  margin-top: 5%;
 
-#chart div {
+}
+
+
+.barChart {
     font: 14px sans-serif;
     color: whitesmoke;
     background-color: steelblue;
@@ -26,6 +34,10 @@
     fill: steelblue;
     transition: fill 250ms linear;
     transition-delay: 150ms;
+}
+
+.pieChartContainer {
+  margin-top: 5%;
 }
 
 path:hover {
