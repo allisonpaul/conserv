@@ -17,9 +17,8 @@ var ClaimEvent = React.createClass({
   render: function(){
     // console.log(this.state.data.events)
     return(
-      <div className="soft-white-bg">
-        <h1 className="claim-event">Claim a slot </h1>
-        <p>hi</p>
+      <div>
+       < div className="graph-titles"><h1>Claim a slot</h1></div>
         <EventList events={this.state.data} />
       </div>
     );

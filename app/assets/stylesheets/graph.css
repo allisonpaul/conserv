@@ -77,16 +77,22 @@ polyline {
 }
 
 .svg-container {
-    display: inline-block;
+    display: block;
     position: relative;
-    width: 100%;
-    padding-bottom: 100%; /* aspect ratio */
+    width: 90%;
+    padding: 2%; /* aspect ratio */
     vertical-align: top;
     overflow: hidden;
+    margin: 15% auto;
 }
 .svg-content-responsive {
     display: inline-block;
     position: absolute;
     top: 10px;
     left: 0;
+}
+
+.lineChartContainer {
+    background-color: whitesmoke;
+
 }

@@ -14,7 +14,7 @@ var ClaimEventButton = React.createClass({
     return <div>
       <a
         onClick={this.claimEvent.bind(null, this.props.event.id)}
-        className="waves-effect waves-light btn-large"
+        className="event-buttons"
         id={this.props.event.id}
       >
         {this.props.event.start_time} | {this.props.event.end_time} | {this.props.event.points}

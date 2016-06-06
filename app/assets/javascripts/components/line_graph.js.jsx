@@ -134,9 +134,9 @@ var LineGraph = React.createClass({
 
     render: function() {
         if (this.state.data != undefined) {
-            return <div > {
-                this.lineGraph(this.state.data.data)
-            } < /div>
+            return <div >
+                    < div className="graph-titles"><h1> History </h1></div>
+            { this.lineGraph(this.state.data.data) } < /div>
         } else {
             return <div > < /div>
         }
