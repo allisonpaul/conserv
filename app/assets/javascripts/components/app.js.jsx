@@ -47,8 +47,10 @@ var App = React.createClass({
         return <PieGraph onAction={this.updateView} />
       case "barGraph":
         return <BarGraph onAction={this.updateView} />
-      case "house":
+      case "houseForm":
         return <HouseForm onAction={this.updateView} />
+      case "house":
+        return <House onAction={this.updateView} />
       case "logout":
         this.logout()
     }
