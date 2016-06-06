@@ -10,6 +10,7 @@ var ClaimEvent = React.createClass({
       url: '/events',
       type: 'get',
     }).success(function(response){
+      console.log(response)
         this.setState({data: response});
       }.bind(this));
   },

@@ -17,7 +17,7 @@ var ClaimEventButton = React.createClass({
         className="event-buttons"
         id={this.props.event.id}
       >
-        {this.props.event.start_time} | {this.props.event.end_time} | {this.props.event.points}
+        {this.props.event.event_date} | {this.props.event.event_time} | {this.props.event.points} Points
       </a>
     </div>
   },

@@ -14,15 +14,16 @@ var NavBar = React.createClass ({
             <li><a onClick={this.handleClick} >User page</a></li>
             <li><a href="badges.html">House</a></li>
           </ul>
-          <ul className="side-nav navtext" id="mobile-demo">
-            <li><a onClick={this.handleClick.bind(null, "claimEvent")} >claim</a></li>
-            <li><a onClick={this.handleClick.bind(null, "barGraph")} >weekly</a></li>
-            <li><a onClick={this.handleClick.bind(null, "userShow")} >user</a></li>
-            <li><a onClick={this.handleClick.bind(null, "lineGraph")} >history</a></li>
-            <li><a onClick={this.handleClick.bind(null, "pieGraph")} >house view</a></li>
-            <li><a onClick={this.handleClick.bind(null, "houseForm")} >make a house</a></li>
-            <li><a onClick={this.handleClick.bind(null, "house")} >house</a></li>
-            <li><a onClick={this.handleClick.bind(null, "logout")} >logout</a></li>
+          <ul className="side-nav" id="mobile-demo">
+            <li><a onClick={this.handleClick.bind(null, "userShow")} >User page</a></li>
+            <li><a onClick={this.handleClick.bind(null, "claimEvent")} >Claim Events</a></li>
+            <li><a onClick={this.handleClick.bind(null, "lineGraph")} >lineGraph </a></li>
+            <li><a onClick={this.handleClick.bind(null, "pieGraph")} >pieGraph </a></li>
+            <li><a onClick={this.handleClick.bind(null, "barGraph")} >barGraph</a></li>
+            <li><a onClick={this.handleClick.bind(null, "house")} >House</a></li>
+            <li><a href="collapsible.html">Settings</a></li>
+            <li><a href="mobile.html">Invite Friends</a></li>
+            <li><a onClick={this.handleClick.bind(null, "logout")} >Logout</a></li>
           </ul>
         </div>
       </nav>
