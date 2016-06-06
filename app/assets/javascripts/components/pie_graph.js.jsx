@@ -36,15 +36,19 @@ var PieGraph = React.createClass ({
 		.padRadius(outerRadius)
 		.innerRadius(innerRadius);
 
-	var svg = d3.select("body").append("svg")
-		.attr("width", width)
-		.attr("height", height)
+	var svg = d3.select("#chart")
+    .classed("svg-container", true)
+    .append("svg")
+		// .attr("width", width)
+		// .attr("height", height)
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 " + parseInt(width) + " " + parseInt(height))
 		.attr("id", function() {
 			return "pie"
 		})
 		.append("g")
-		.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
+		.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+    .classed("svg-content-responsive", true);
 
 	svg.selectAll("path")
 		.data(pie(points))
@@ -64,10 +68,10 @@ var PieGraph = React.createClass ({
 		.on("click", function() {
 				var that = this
 				d3.selectAll("#legContent").remove();
-				d3.select("#legend")
+				d3.select("#legend") // changing this to chart puts it below
 					.append("div")
 					.attr("id", "legContent")
-					.style("margin-left", function(){return parseInt(width/4) + "px"})
+					.style("margin", function(){return "0 auto"})
 					.text(function(d,i) { return that.attributes[2].value  + " " + that.attributes[3].value })
 					.style("background-color", function(d,i) { return that.attributes[1].value })
 			});
@@ -90,7 +94,7 @@ var PieGraph = React.createClass ({
   render: function(){
   	console.log(this.state.data)
 		if (this.state.data != undefined) {
-      return <div> { this.popoutPie(this.state.data.data, 500, 500) } </div>
+      return <div> { this.popoutPie(this.state.data.data, 500, 500) } <div id="legend"></div></div>
     } else {
 			return <div></div>
     }
