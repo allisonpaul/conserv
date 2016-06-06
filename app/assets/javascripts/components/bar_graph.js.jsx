@@ -27,11 +27,15 @@ var BarGraph = React.createClass ({
         .domain([0, d3.max(points)])
         .range([0, 420]);
 
-    var chart = d3.select("#chart")
-      .selectAll("div")
+    var chart = d3.select(".app-container")
+      .selectAll("#chart")
         .data(points)
-      .enter().append("div")
-          .style("width", 0)
+        .enter()
+        .append("div")
+        .attr("class", "barChartContainer")
+        .append("div")
+        .attr("class", "barChart")
+        .style("width", 0)
         .transition().style("width", function(d) { return d * 5 + "%"; })
         .text(function(d, i) { return dates[i] + "  " + points[i] + " points"; }).style("color", "lightblue")
         .transition().text(function(d, i) { return dates[i] + " " + points[i] + " points"; }).style("color", "whitesmoke");
