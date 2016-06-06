@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/users/new' => 'users#new'
   post '/users' => 'users#create'
   post '/sessions' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
   # resources :users
   get '/graphs/line' => 'graphs#line'
   get '/graphs/bar' => 'graphs#bar'

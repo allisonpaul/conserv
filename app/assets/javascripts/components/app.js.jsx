@@ -8,9 +8,25 @@ var App = React.createClass({
   },
 
   updateView: function(newView, options = {}) {
-
+    $('#chart').empty()
     this.setState({ screen: newView });
     this.setState(options);
+  },
+
+  logout: function() {
+    this.logoutServer();
+    this.setState({
+      screen: "main",
+      userLoggedIn: false,
+      currentUserID: undefined,
+    });
+  },
+
+  logoutServer: function() {
+    $.ajax({
+      url: '/logout',
+      type: 'get'
+    }).done(function(response) {console.log(response)})
   },
 
   updateScreenContent: function() {
@@ -33,6 +49,8 @@ var App = React.createClass({
         return <BarGraph onAction={this.updateView} />
       case "house":
         return <HouseForm onAction={this.updateView} />
+      case "logout":
+        this.logout()
     }
   },
   render: function(){
