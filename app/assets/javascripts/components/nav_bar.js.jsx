@@ -26,6 +26,7 @@ var NavBar = React.createClass ({
             <li><a onClick={this.handleClick.bind(null, "house")} >House</a></li>
             <li><a href="collapsible.html">Settings</a></li>
             <li><a href="mobile.html">Invite Friends</a></li>
+            <li><a onClick={this.handleClick.bind(null, "logout")} >Logout</a></li>
           </ul>
         </div>
       </nav>
