@@ -107,28 +107,30 @@ var LineGraph = React.createClass({
             .attr("class", "y axis")
             .call(yAxis);
 
-        // ----------------------------- testing ---------------------
-        // window.addEventListener('resize', function(event){
-        //   windowSize = window.innerWidth;
-        //   console.log(window.innerWidth);
-        //   updateDimensions(windowSize)
-        // });
-        //
-        // window.onresize = updateDimensions(windowSize)
-        // // window.onresize = console.log(windowSize)
-        //
-        // function updateDimensions(windowWidth) {
-        //     // margin.top = 20;
-        //     // margin.right = 50;
-        //     // margin.left = 50;
-        //     // margin.bottom = 50;
-        //
-        //     // width = windowSize - margin.left - margin.right,
-        //     // height = windowSize / 2 - margin.top - margin.bottom;
-        //     //
-        //     // svg.attr("width", width + margin.left + margin.right);
-        //     // svg.attr("height", height + margin.top + margin.bottom);
-        // }
+            var curtain = svg.append('rect')
+              .attr('x', -1 * width)
+              .attr('y', -1 * height)
+              .attr('height', height)
+              .attr('width', width)
+              .attr('class', 'curtain')
+              .attr('transform', 'rotate(180)')
+              .style('fill', '#5f5f5f')
+
+              var t = svg.transition()
+  .delay(750)
+  .duration(6000)
+  .ease('linear')
+  .each('end', function() {
+    d3.select('line.guide')
+      .transition()
+      .style('opacity', 0)
+      .remove()
+  });
+
+t.select('rect.curtain')
+  .attr('width', 0);
+t.select('line.guide')
+  .attr('transform', 'translate(' + width + ', 0)')
 
     },
 
