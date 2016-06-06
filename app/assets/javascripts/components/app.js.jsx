@@ -35,10 +35,12 @@ var App = React.createClass({
         return <Login onAction={this.updateView} />
       case "main":
         if (this.state.userLoggedIn === true) {
-          return <HomePage />
-        } else { return <Login /> }
+          return <HomePage onAction={this.updateView}/>
+        } else { return <Login onAction={this.updateView} /> }
       case "register":
         return <Register onAction={this.updateView} />
+      case "userShow":
+        return <UserShow onAction={this.updateView} />
       case "claimEvent":
         return <ClaimEvent onAction={this.updateView} />
       case "lineGraph":
