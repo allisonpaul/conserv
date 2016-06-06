@@ -6,6 +6,7 @@
                 background-color: steelblue;
             }
         }
+
 #chart div {
     font: 14px sans-serif;
     color: whitesmoke;
@@ -20,6 +21,7 @@
     transition: width 2s;
     transition: color 2s;
 }
+
 #pie {
     fill: steelblue;
     transition: fill 250ms linear;
@@ -54,8 +56,6 @@ polyline {
 }
 
 #legContent {
-    display: inline-block;
-    color: lightblue;
     font-size: 2em;
     text-align: center;
     padding-top:5%;
@@ -64,3 +64,17 @@ polyline {
     border-radius: 10px;
 }
 
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
