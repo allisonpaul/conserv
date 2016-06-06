@@ -4,6 +4,7 @@ var App = React.createClass({
       screen: "login",
       userLoggedIn: false,
       currentUserID: undefined,
+      houseMember: false
     }
   },
 
@@ -49,10 +50,12 @@ var App = React.createClass({
         return <PieGraph onAction={this.updateView} />
       case "barGraph":
         return <BarGraph onAction={this.updateView} />
-      case "houseForm":
-        return <HouseForm onAction={this.updateView} />
       case "house":
+      if (this.state.houseMember === true) {
         return <House onAction={this.updateView} />
+      } else {
+        return <HouseForm onAction={this.updateView} />
+      }
       case "logout":
         this.logout()
     }
