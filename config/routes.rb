@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   post '/houses' => 'houses#create'
   post '/houses/add' => 'houses#add_member'
 
+  get '/events/generate' =>'events#generate_events'
+
 end
