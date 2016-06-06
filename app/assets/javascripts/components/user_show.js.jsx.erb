@@ -18,7 +18,7 @@ var UserShow = React.createClass ({
     if (this.state.data != undefined) {
       return(
         <div>
-          <img src="gravatar_tag { this.state.data.url }" width="50" height="50" alt="Gravatar" />
+          <img src={ Gravtastic(this.state.data.email) } />
         </div>
       )
     } else {
