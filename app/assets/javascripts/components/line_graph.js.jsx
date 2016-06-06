@@ -20,9 +20,6 @@ var LineGraph = React.createClass({
 
     lineGraph: function(data) {
 
-        console.log("window size")
-        console.log(window.innerWidth)
-
         var windowSize = window.innerWidth;
 
         // Set the dimensions of the canvas / graph
@@ -63,7 +60,9 @@ var LineGraph = React.createClass({
         var heightInput = height + margin.top + margin.bottom;
 
         // Adds the svg canvas
-        var svg = d3.select("#chart")
+        var svg = d3.select(".app-container")
+            .append("div")
+            .attr("class", "lineChartContainer")
             .classed("svg-container", true)
             .append("svg")
             // .attr("width", width + margin.left + margin.right)

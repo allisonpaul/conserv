@@ -36,7 +36,9 @@ var PieGraph = React.createClass ({
 		.padRadius(outerRadius)
 		.innerRadius(innerRadius);
 
-	var svg = d3.select("#chart")
+	var svg = d3.select(".app-container")
+    .append("div")
+    .attr("class", "pieChartContainer")
     .classed("svg-container", true)
     .append("svg")
 		// .attr("width", width)
@@ -68,7 +70,7 @@ var PieGraph = React.createClass ({
 		.on("click", function() {
 				var that = this
 				d3.selectAll("#legContent").remove();
-				d3.select("#legend") // changing this to chart puts it below
+				d3.select(".pieChartContainer") // changing this to chart puts it below
 					.append("div")
 					.attr("id", "legContent")
 					.style("margin", function(){return "0 auto"})
