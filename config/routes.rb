@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get '/houses' => 'houses#index'
   get '/houses/new' => 'houses#new'
   post '/houses' => 'houses#create'
+  post '/houses/add' => 'houses#add_member'
 
 end
