@@ -52,7 +52,7 @@ var House = React.createClass({
 
         <ul class="collection">
           {this.state.data.data.map(function(data, i){
-            return <li class="collection-item avatar" key={i}>
+            return <li class="collection-item avatar" className="circle" key={i}>
               <img src={ Gravtastic(data.email) } alt="" class="circle" />
               <span class="title">{data.user_name}</span>
             </li>

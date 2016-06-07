@@ -63,7 +63,6 @@ var App = React.createClass({
     }
   },
   render: function(){
-    console.log("app rendered")
     return <div className="app-container">
     < NavBar onAction={this.updateView} />
       {this.updateScreenContent()}
