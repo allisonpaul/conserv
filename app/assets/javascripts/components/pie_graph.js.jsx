@@ -36,7 +36,9 @@ var PieGraph = React.createClass ({
 		.padRadius(outerRadius)
 		.innerRadius(innerRadius);
 
-	var svg = d3.select(".app-container")
+  $('.pieChartContainer').remove()
+
+  var svg = d3.select(".app-container")
     .append("div")
     .attr("class", "pieChartContainer")
     .classed("svg-container", true)
