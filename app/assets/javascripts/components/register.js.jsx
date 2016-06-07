@@ -13,7 +13,7 @@ var Register = React.createClass({
           $(".errors").append(`<li> ${error} </li>`)
         })
       } else {
-        this.props.onAction('main', {userLoggedIn: true, currentUserID: response.user_id})
+        this.props.onAction('device', {userLoggedIn: true, currentUserID: response.user_id})
       }
     }.bind(this))
   },

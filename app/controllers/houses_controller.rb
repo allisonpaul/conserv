@@ -43,8 +43,15 @@ class HousesController < ApplicationController
     end
   end
 
+  def join_house
+    @house = House.find(params[:id])
+    current_user.house_id = @house.id
+    current_user.save
+    render json: { user: current_user }
+  end
+
   private
     def house_params
-      params.permit(:name)
+      params.permit(:name, :id)
     end
 end

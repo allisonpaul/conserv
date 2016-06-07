@@ -4,7 +4,9 @@ var App = React.createClass({
       screen: "login",
       userLoggedIn: false,
       currentUserID: undefined,
-      houseMember: false
+      houseMember: false,
+      message: undefined,
+      houseID: undefined
     }
   },
 
@@ -42,6 +44,10 @@ var App = React.createClass({
         } else { return <Login onAction={this.updateView} /> }
       case "register":
         return <Register onAction={this.updateView} />
+      case "device":
+        return <DeviceReg onAction={this.updateView} />
+      case "deviceFound":
+        return <DeviceFound onAction={this.updateView} message={this.state.message} houseID={this.state.houseID} />
       case "userShow":
         return <UserShow onAction={this.updateView} />
       case "claimEvent":
