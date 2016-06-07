@@ -10,10 +10,6 @@ var NavBar = React.createClass ({
         <div className="nav-wrapper">
           <a href="#" className="brand-logo"><ConservLogo/></a>
           <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
-          <ul className="right hide-on-med-and-down">
-            <li><a onClick={this.handleClick} >User page</a></li>
-            <li><a href="badges.html">House</a></li>
-          </ul>
           <ul className="side-nav navtext" id="mobile-demo">
             <li><a onClick={this.handleClick.bind(null, "userShow")} >User page</a></li>
             <li><a onClick={this.handleClick.bind(null, "claimEvent")} >Claim Events</a></li>
