@@ -6,7 +6,7 @@ var BarGraphContainer = React.createClass ({
         <h1>Recent Activity</h1>
       </div>
       <div id="bargraph"></div>
-      return <BarGraph />
+       <BarGraph />
     </div>
   },
 })
