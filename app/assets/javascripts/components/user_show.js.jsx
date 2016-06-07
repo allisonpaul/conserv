@@ -18,9 +18,11 @@ var UserShow = React.createClass ({
     if (this.state.data != undefined) {
       return(
         <div>
-          username
-          <p id="image"><img src={ Gravtastic(this.state.data.email) } /></p>
-          <BarGraph />
+          <div>
+            <h1 id="username">{this.state.data.username}</h1>
+            <img id="avatar" src={ Gravtastic(this.state.data.email) } />
+          </div>
+          <BarGraphContainer />
         </div>
       )
     } else {

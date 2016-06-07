@@ -48,7 +48,6 @@ var House = React.createClass({
 
 
         <h3> { this.state.data.data[0].house_name } </h3>
-        <h5> Current Members: </h5>
 
         <ul class="collection">
           {this.state.data.data.map(function(data, i){
