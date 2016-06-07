@@ -45,20 +45,19 @@ var House = React.createClass({
     if (this.state.data != undefined) {
       return (
       <div className="house-info">
+        <h3 className="graph-titles"> { this.state.data.data[0].house_name } </h3>
+        <div>
+          <PieGraph />
+        </div>
 
-
-        <h3> { this.state.data.data[0].house_name } </h3>
-        <h5> Current Members: </h5>
-
-        <ul class="collection">
+        <ul>
           {this.state.data.data.map(function(data, i){
-            return <li class="collection-item avatar" className="circle" key={i}>
-              <img src={ Gravtastic(data.email) } alt="" class="circle" />
-              <span class="title">{data.user_name}</span>
+            return <li key={i}>
+              <img className="group-avatars" src={ Gravtastic(data.email) } alt=""/>
             </li>
           })}
-        <PieGraph />
         </ul>
+
 
         <h6> Add a new user to your house! </h6>
         <div className="add-member">
@@ -70,7 +69,7 @@ var House = React.createClass({
                 <label>Username</label>
               </div>
               <div className="input-field col s10 center-align">
-                <button className="btn waves-effect waves-light" type="submit" name="action">
+                <button className="other-buttons" type="submit" name="action">
                   Add
                 </button>
               </div>

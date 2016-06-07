@@ -12,7 +12,6 @@ var LineGraph = React.createClass({
             url: '/graphs/line',
             type: 'GET'
         }).success(function(response) {
-            console.log(response)
             this.setState({
                 data: response
             });
@@ -31,7 +30,7 @@ var LineGraph = React.createClass({
                 left: 50
             },
             width = windowSize - margin.left - margin.right,
-            height = windowSize / 2 - margin.top - margin.bottom;
+            height = windowSize  - margin.top - margin.bottom;
 
         // Parse the date / time  ---- this is wonky
         var parseDate = d3.time.format("%Y-%m-%d").parse;
@@ -42,10 +41,10 @@ var LineGraph = React.createClass({
 
         // Define the axes
         var xAxis = d3.svg.axis().scale(x)
-            .orient("bottom").ticks(3);
+            .orient("bottom").ticks(5);
 
         var yAxis = d3.svg.axis().scale(y)
-            .orient("left").ticks(3);
+            .orient("left").ticks(5);
 
 
         // Define the line
@@ -84,9 +83,11 @@ var LineGraph = React.createClass({
         x.domain(d3.extent(data, function(d) {
             return d.date;
         }));
-        y.domain([0, d3.max(data, function(d) {
+        y.domain([d3.min(data, function(d) {
             return d.points;
-        })]);
+        }) - 5, d3.max(data, function(d) {
+            return d.points;
+        }) + 5]);
 
 
         // Add the valueline path.
@@ -108,38 +109,68 @@ var LineGraph = React.createClass({
             .attr("class", "y axis")
             .call(yAxis);
 
-            var curtain = svg.append('rect')
-              .attr('x', -1 * width)
-              .attr('y', -1 * height)
-              .attr('height', height)
-              .attr('width', width)
-              .attr('class', 'curtain')
-              .attr('transform', 'rotate(180)')
-              .style('fill', '#ffffff')
+        var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-30, 0])
+            .html(function(d) {
+                return "<span style='color:steelblue'>" + d.points + "</span>";
+            });
 
-              var t = svg.transition()
-  .delay(750)
-  .duration(3000)
-  .ease('linear')
-  .each('end', function() {
-    d3.select('line.guide')
-      .transition()
-      .style('opacity', 0)
-      .remove()
-  });
+        svg.call(tip);
 
-t.select('rect.curtain')
-  .attr('width', 0);
-t.select('line.guide')
-  .attr('transform', 'translate(' + width + ', 0)')
+        svg.selectAll(".dot")
+            .data(data)
+            .enter().append("circle")
+            .attr('class', 'datapoint')
+            .attr('cx', function(d) {
+                return x(d.date);
+            })
+            .attr('cy', function(d) {
+                return y(d.points);
+            })
+            .attr('r', 6)
+            .attr('fill', 'whitesmoke')
+            .attr('stroke', 'steelblue')
+            .attr('stroke-width', '3')
+            .on('mouseover', tip.show)
+            .on('mouseout', tip.hide);
+
+
+        var curtain = svg.append('rect')
+            .attr('x', -1 * width - 15)
+            .attr('y', -1 * height + 10)
+            .attr('height', height)
+            .attr('width', width + 10)
+            .attr('class', 'curtain')
+            .attr('transform', 'rotate(180)')
+            .style('fill', 'whitesmoke')
+
+        var t = svg.transition()
+            .delay(750)
+            .duration(3000)
+            .ease('linear')
+            .each('end', function() {
+                d3.select('line.guide')
+                    .transition()
+                    .style('opacity', 0)
+                    .remove()
+            });
+
+        t.select('rect.curtain')
+            .attr('width', 0);
+        t.select('line.guide')
+            .attr('transform', 'translate(' + width + ', 0)')
+
+
 
     },
 
     render: function() {
         if (this.state.data != undefined) {
             return <div >
-                    < div className="graph-titles"><h1> History </h1></div>
-            { this.lineGraph(this.state.data.data) } < /div>
+                < div className = "graph-titles" > < h1 > History < /h1></div > {
+                    this.lineGraph(this.state.data.data)
+                } < /div>
         } else {
             return <div > < /div>
         }

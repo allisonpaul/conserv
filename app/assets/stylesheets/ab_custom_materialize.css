@@ -69,14 +69,14 @@ button:focus {
 
 .app-container{
   min-height: 100%;
-  background-color: #65756b;
+  background-color: #587372;
   top:0;
 }
 
 .graph-titles {
   font-size: 2.5em;
   text-align: center;
-  color: white;
+  color: #131919;
   font-family: 'Montserrat', sans-serif;
   margin: 1%;
 }
@@ -181,3 +181,34 @@ a {
   width: 120%;
   text-transform: lowercase;
 }
+
+#avatar{
+  border-radius: 100%;
+  float: right;
+  display: inline;
+  margin-top: 5%;
+  margin-right: 14%;
+}
+
+.group-avatars{
+  border-radius: 100%;
+}
+
+#username {
+  display:inline;
+  float:left;
+  margin-left: 14%;
+  margin-top: 12%;
+  font-size: 3.5em;
+  margin-bottom: 10%;
+  color:#131919;
+}
+
+ul li {
+  list-style-type: none;
+  display:inline;
+}
+
+
+
+
