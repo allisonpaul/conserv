@@ -30,7 +30,7 @@ var LineGraph = React.createClass({
                 left: 50
             },
             width = windowSize - margin.left - margin.right,
-            height = windowSize / 2 - margin.top - margin.bottom;
+            height = windowSize  - margin.top - margin.bottom;
 
         // Parse the date / time  ---- this is wonky
         var parseDate = d3.time.format("%Y-%m-%d").parse;

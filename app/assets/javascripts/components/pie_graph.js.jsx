@@ -125,10 +125,9 @@ var PieGraph = React.createClass({
     render: function() {
         console.log(this.state.data)
         if (this.state.data != undefined) {
-            return <div >
-                < div className = "graph-titles" > < h1 > House Activity < /h1></div > {
+            return <div >{
                     this.popoutPie(this.state.data.data, 500, 500)
-                } < div id = "legend" > < /div></div >
+                    } < div id = "legend" > < /div></div >
         } else {
             return <div > < /div>
         }
