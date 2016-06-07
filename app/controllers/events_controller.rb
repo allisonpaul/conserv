@@ -8,7 +8,8 @@ class EventsController < ApplicationController
     all_events.each do |event|
       unclaimed_events << { event_date: event.start_time.strftime('%A, %b %d'),
                             event_time: event.start_time.strftime('%I:%M %p'),
-                            points: event.points }
+                            points: event.points,
+                            id: event.id }
     end
     # unclaimed_events = all_events.where(event_claimer_id: nil)
     render json: { events: unclaimed_events }
@@ -21,6 +22,7 @@ class EventsController < ApplicationController
   end
 
   def claim
+    p params
     event = Event.find(params[:event_id])
     p event
     event.event_claimer_id = current_user.id

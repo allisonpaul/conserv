@@ -28,12 +28,12 @@ var BarGraph = React.createClass ({
         .range([0, 420]);
 
     var chart = d3.select(".app-container")
-      .selectAll("#chart")
-        .data(points)
-        .enter()
-        .append("div")
+      .selectAll("div").attr("class", "barChartContainer")
+        .insert("div")
         .attr("class", "barChartContainer")
-        .append("div")
+        .data(points)
+        .enter("#barGraph")
+        .insert("div")
         .attr("class", "barChart")
         .style("width", 0)
         .transition().style("width", function(d) { return d * 5 + "%"; })
@@ -45,7 +45,14 @@ var BarGraph = React.createClass ({
 
   render: function(){
     if(this.state.data != undefined) {
-      return <div> { this.BarGraph(this.state.data.data) } </div>
+      return <div>
+                <div id="bargraph">
+                  <div className="graph-titles">
+                    <h1>Recent Activity</h1>
+                  </div>
+                </div>
+                { this.BarGraph(this.state.data.data) }
+              </div>
       } else { return <div></div>
     }
   },

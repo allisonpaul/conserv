@@ -114,11 +114,11 @@ var LineGraph = React.createClass({
               .attr('width', width)
               .attr('class', 'curtain')
               .attr('transform', 'rotate(180)')
-              .style('fill', '#5f5f5f')
+              .style('fill', '#ffffff')
 
               var t = svg.transition()
   .delay(750)
-  .duration(6000)
+  .duration(3000)
   .ease('linear')
   .each('end', function() {
     d3.select('line.guide')
@@ -136,9 +136,9 @@ t.select('line.guide')
 
     render: function() {
         if (this.state.data != undefined) {
-            return <div > {
-                this.lineGraph(this.state.data.data)
-            } < /div>
+            return <div >
+                    < div className="graph-titles"><h1> History </h1></div>
+            { this.lineGraph(this.state.data.data) } < /div>
         } else {
             return <div > < /div>
         }
