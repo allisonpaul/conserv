@@ -40,6 +40,7 @@ var BarGraph = React.createClass ({
         .transition().style("width", function(d) { return d * 2 + "%"; })
         .text(function(d, i) { return dates[i] + "  " + points[i] + " points"; }).style("color", "lightblue")
         .transition().text(function(d, i) { return dates[i] + " " + points[i] + " points"; }).style("color", "whitesmoke");
+
   },
 
   render: function(){
