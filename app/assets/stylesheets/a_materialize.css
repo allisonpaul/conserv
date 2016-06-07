@@ -4250,10 +4250,8 @@ nav .input-field label.active {
   position: fixed;
 }
 
-
-  .navbar-fixed {
-    height: 64px;
-  }
+.navbar-fixed {
+  height: 64px;
 }
 
 @font-face {
