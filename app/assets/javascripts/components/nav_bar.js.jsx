@@ -11,14 +11,10 @@ var NavBar = React.createClass ({
           <a href="#" className="brand-logo"><ConservLogo/></a>
           <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
           <ul className="side-nav navtext" id="mobile-demo">
-            <li><a onClick={this.handleClick.bind(null, "userShow")} >User page</a></li>
+            <li><a onClick={this.handleClick.bind(null, "userShow")} >Home</a></li>
             <li><a onClick={this.handleClick.bind(null, "claimEvent")} >Claim Events</a></li>
-            <li><a onClick={this.handleClick.bind(null, "lineGraph")} >lineGraph </a></li>
-            <li><a onClick={this.handleClick.bind(null, "pieGraph")} >pieGraph </a></li>
-            <li><a onClick={this.handleClick.bind(null, "barGraph")} >barGraph</a></li>
+            <li><a onClick={this.handleClick.bind(null, "lineGraph")} >History </a></li>
             <li><a onClick={this.handleClick.bind(null, "house")} >House</a></li>
-            <li><a href="collapsible.html">Settings</a></li>
-            <li><a href="mobile.html">Invite Friends</a></li>
             <li><a onClick={this.handleClick.bind(null, "logout")} >Logout</a></li>
           </ul>
         </div>
