@@ -114,11 +114,11 @@ var LineGraph = React.createClass({
               .attr('width', width)
               .attr('class', 'curtain')
               .attr('transform', 'rotate(180)')
-              .style('fill', '#5f5f5f')
+              .style('fill', '#ffffff')
 
               var t = svg.transition()
   .delay(750)
-  .duration(6000)
+  .duration(3000)
   .ease('linear')
   .each('end', function() {
     d3.select('line.guide')

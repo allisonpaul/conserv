@@ -141,3 +141,8 @@ button:focus {
   background-color: purple;
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #BDC8B1 inset !important;
+}
+
+

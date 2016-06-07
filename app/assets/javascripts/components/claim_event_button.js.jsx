@@ -1,6 +1,7 @@
 var ClaimEventButton = React.createClass({
 
   claimEvent: function(id) {
+    console.log(id)
     $.ajax({
       url: "/events/claim",
       type: "post",
