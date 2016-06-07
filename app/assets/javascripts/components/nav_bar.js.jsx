@@ -13,8 +13,6 @@ var NavBar = React.createClass ({
           <ul className="right hide-on-med-and-down">
             <li><a onClick={this.handleClick} >User page</a></li>
             <li><a href="badges.html">House</a></li>
-            <li><a href="collapsible.html">Settings</a></li>
-            <li><a href="mobile.html">Invite Friends</a></li>
           </ul>
           <ul className="side-nav" id="mobile-demo">
             <li><a onClick={this.handleClick.bind(null, "userShow")} >User page</a></li>
