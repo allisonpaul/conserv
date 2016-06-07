@@ -10,9 +10,10 @@ var App = React.createClass({
 
   updateView: function(newView, options = {}) {
     if ($('.lineChartContainer') != []) { $('.lineChartContainer').remove() }
-    if ($('.pieChartContainer') != []) { $('.pieChartContainer').remove() }
+    $('.pieChartContainer').remove()
     this.setState({ screen: newView });
     this.setState(options);
+    // this.updateScreenContent();
   },
 
   logout: function() {
@@ -62,6 +63,7 @@ var App = React.createClass({
     }
   },
   render: function(){
+    console.log("app rendered")
     return <div className="app-container">
     < NavBar onAction={this.updateView} />
       {this.updateScreenContent()}
