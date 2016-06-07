@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   get '/houses/new' => 'houses#new'
   post '/houses' => 'houses#create'
   post '/houses/add' => 'houses#add_member'
+  post '/houses/join' => 'houses#join_house'
 
   get '/events/generate' =>'events#generate_events'
 
+  post '/devices' => 'devices#create'
 end
