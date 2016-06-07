@@ -51,7 +51,7 @@ var App = React.createClass({
       case "pieGraph":
         return <PieGraph onAction={this.updateView} />
       case "barGraph":
-        return <BarGraph onAction={this.updateView} />
+        return <BarGraphContainer onAction={this.updateView} />
       case "house":
       if (this.state.houseMember === true) {
         return <House onAction={this.updateView} />
