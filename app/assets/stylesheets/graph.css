@@ -1,11 +1,11 @@
 @keyframes example {
-            from {
-                background-color: lightblue;
-            }
-            to {
-                background-color: steelblue;
-            }
-        }
+    from {
+        background-color: #367372;
+    }
+    to {
+        background-color: #1e403f;
+    }
+}
 .barChartContainer {
   display: block;
   position: relative;
@@ -17,13 +17,11 @@
 
 .barChart {
     font: 14px sans-serif;
-    color: whitesmoke;
-    background-color: steelblue;
+    background-color: #1e403f;
     text-align: right;
-    padding: 15px;
+    padding: #%;
     border-radius: 10px;
-    margin: 3px;
-    color: white;
+    margin: 3%;
     animation-name: example;
     animation-duration: 2s;
     transition: width 2s;
@@ -52,7 +50,7 @@ path:hover {
     shape-rendering: crispEdges;
 }
 #valLine {
-    stroke: steelblue;
+    stroke: #367372;
     stroke-width: 2;
     fill: none;
 }
@@ -93,8 +91,8 @@ polyline {
 }
 
 .lineChartContainer {
-    background-color: whitesmoke;
-
+    background-color: rgba(245, 245, 245, 0.95);
+    border-radius: 12px;
 }
 
 #bargraph {
@@ -104,5 +102,7 @@ polyline {
     padding: 2%; /* aspect ratio */
     vertical-align: top;
     overflow: hidden;
-    margin: 15% auto;
+    margin: 10% auto;
+    background-color: rgba(245, 245, 245, 0.95);
+    border-radius: 12px;
 }
