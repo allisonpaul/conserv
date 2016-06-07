@@ -9,7 +9,8 @@ var App = React.createClass({
   },
 
   updateView: function(newView, options = {}) {
-    $('#chart').empty()
+    if ($('.lineChartContainer') != []) { $('.lineChartContainer').remove() }
+    if ($('.pieChartContainer') != []) { $('.pieChartContainer').remove() }
     this.setState({ screen: newView });
     this.setState(options);
   },

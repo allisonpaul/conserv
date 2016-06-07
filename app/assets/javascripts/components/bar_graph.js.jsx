@@ -7,9 +7,10 @@ var BarGraph = React.createClass ({
 
   componentWillMount: function(){
     $.ajax({
-      url: '/graphs/line',
+      url: '/graphs/bar',
       type: 'GET'
     }).success(function(response){
+      console.log(response)
       this.setState({data: response});
     }.bind(this));
   },
@@ -28,7 +29,7 @@ var BarGraph = React.createClass ({
         .range([0, 420]);
 
     var chart = d3.select(".app-container")
-      .selectAll("div").attr("class", "barChartContainer")
+      .selectAll("div")
         .insert("div")
         .attr("class", "barChartContainer")
         .data(points)

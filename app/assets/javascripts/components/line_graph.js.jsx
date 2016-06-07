@@ -12,6 +12,7 @@ var LineGraph = React.createClass({
             url: '/graphs/line',
             type: 'GET'
         }).success(function(response) {
+            console.log(response)
             this.setState({
                 data: response
             });
