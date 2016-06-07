@@ -190,6 +190,10 @@ a {
   margin-right: 14%;
 }
 
+.group-avatars{
+  border-radius: 100%;
+}
+
 #username {
   display:inline;
   float:left;
@@ -199,3 +203,12 @@ a {
   margin-bottom: 10%;
   color:#131919;
 }
+
+ul li {
+  list-style-type: none;
+  display:inline;
+}
+
+
+
+
