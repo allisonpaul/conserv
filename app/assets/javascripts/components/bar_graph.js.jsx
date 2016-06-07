@@ -15,7 +15,7 @@ var BarGraph = React.createClass ({
     }.bind(this));
   },
 
-  BarGraph: function(data) {
+  renderBarGraph: function(data) {
     var points = [];
     var dates = [];
 
@@ -28,10 +28,10 @@ var BarGraph = React.createClass ({
         .domain([0, d3.max(points)])
         .range([0, 420]);
 
-    var chart = d3.select(".app-container")
-      .selectAll("div")
-        .insert("div")
-        .attr("class", "barChartContainer")
+    var chart = d3.select("#bargraph")
+      .selectAll(".barChart")
+        // .insert("div")
+        // .attr("class", "barChartContainer")
         .data(points)
         .enter("#barGraph")
         .insert("div")
@@ -47,13 +47,8 @@ var BarGraph = React.createClass ({
   render: function(){
     if(this.state.data != undefined) {
       return <div>
-                <div id="bargraph">
-                  <div className="graph-titles">
-                    <h1>Recent Activity</h1>
-                  </div>
-                </div>
-                { this.BarGraph(this.state.data.data) }
-              </div>
+        { this.renderBarGraph(this.state.data.data) }
+      </div>
       } else { return <div></div>
     }
   },

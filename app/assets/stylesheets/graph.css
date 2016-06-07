@@ -96,3 +96,13 @@ polyline {
     background-color: whitesmoke;
 
 }
+
+#bargraph {
+    display: block;
+    position: relative;
+    width: 90%;
+    padding: 2%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+    margin: 15% auto;
+}
