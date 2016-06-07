@@ -68,16 +68,17 @@ button:focus {
 }
 
 .app-container{
-  height: 100vh;
+  min-height: 100%;
   background-color: #65756b;
   top:0;
 }
 
 .graph-titles {
-  font-size: 1em;
+  font-size: 2.5em;
   text-align: center;
   color: white;
   font-family: 'Montserrat', sans-serif;
+  margin: 1%;
 }
 
 .event-button-container{
@@ -99,7 +100,6 @@ button:focus {
 @media only screen and (max-device-width: 480px) {
   .btn, .waves-effect, .waves-light{
     height:76px;
-    width: 120%;
   }
 }
 
@@ -163,3 +163,21 @@ a {
   text-align: left;
 }
 
+
+.other-buttons {
+  background-color: rgba(223, 222, 206,0.4);
+  border: none;
+  border-radius: 12px;
+  display: inline-block;
+ /* height: 36px;*/
+  line-height: 36px;
+  outline: 0;
+/*  padding: 0 2rem;*/
+/*  text-transform: uppercase;*/
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 2em;
+  height: 55px;
+  width: 120%;
+  text-transform: lowercase;
+}

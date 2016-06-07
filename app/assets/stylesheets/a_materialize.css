@@ -4325,7 +4325,6 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 h1 {
-  font-size: 4.2rem;
   line-height: 110%;
   margin: 2.1rem 0 1.68rem 0;
 }
@@ -4835,7 +4834,7 @@ small {
 
 .btn, .btn-large,
 .btn-flat {
-  background-color: #65756b;
+  background-color: rgba(101,117,107,0.75);
   border: none;
   border-radius: 12px;
   display: inline-block;
