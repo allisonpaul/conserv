@@ -29,7 +29,6 @@ nav .brand-logo {
   padding: 0;
   white-space: nowrap;
   margin-left: 3%;
-
 }
 
 #register-button{
@@ -54,9 +53,6 @@ nav .brand-logo {
       width:100%;
       height: 100vh;
   }
-}
-
-.btn:hover, .btn-large:hover {
 }
 
 button:focus {
@@ -150,6 +146,7 @@ input:-webkit-autofill {
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
     height: 104px;
     line-height: 104px;
+  }
 }
 
 a {
