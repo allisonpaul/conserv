@@ -3465,6 +3465,7 @@ input[type=range] + .thumb {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+  margin-top: 10%;
 }
 
 .row:after {
@@ -4825,24 +4826,7 @@ small {
   will-change: transform, opacity;
 }*/
 
-.btn, .btn-large,
-.btn-flat {
-  background-color: rgba(101,117,107,0.75);
-  border: none;
-  border-radius: 12px;
-  display: inline-block;
- /* height: 36px;*/
-  line-height: 36px;
-  outline: 0;
-/*  padding: 0 2rem;*/
-/*  text-transform: uppercase;*/
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  font-size: 2em;
-  height: 55px;
-  width: 120%;
-  text-transform: lowercase;
-}
+
 
 .btn.disabled, .disabled.btn-large,
 .btn-floating.disabled,

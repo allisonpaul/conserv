@@ -43,7 +43,7 @@ var Login = React.createClass({
             </div>
             <div className="row">
             <div className="input-field col s10 center-align">
-              <button className="btn waves-effect waves-light" type="submit" name="action" id="button-text">submit
+              <button className="btn waves-effect waves-light" type="submit" name="action" id="button-text">login
 
               </button>
             </div>

@@ -34,8 +34,11 @@ nav .brand-logo {
 #register-button{
   color:#cedac5;
   font-family: quicksand;
-  text-align: left;
+  text-align: center;
   top:0;
+  font-size: 20px;
+  margin-top: 15%;
+  width: 100%;
 }
 
 .login-form{
@@ -209,6 +212,25 @@ ul li {
   display:inline;
 }
 
+.btn, .btn-large,
+.btn-flat {
+  background-color: rgba(101,117,107,0.75);
+  border: none;
+  border-radius: 12px;
+  display: inline-block;
+ /* height: 36px;*/
+  line-height: 36px;
+  outline: 0;
+/*  padding: 0 2rem;*/
+/*  text-transform: uppercase;*/
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 2em;
+  height: 55px;
+  width: 120%;
+  text-transform: lowercase;
+  margin-top: 22%;
+}
 
 
 
