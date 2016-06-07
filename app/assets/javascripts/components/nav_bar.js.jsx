@@ -14,7 +14,7 @@ var NavBar = React.createClass ({
             <li><a onClick={this.handleClick} >User page</a></li>
             <li><a href="badges.html">House</a></li>
           </ul>
-          <ul className="side-nav" id="mobile-demo">
+          <ul className="side-nav navtext" id="mobile-demo">
             <li><a onClick={this.handleClick.bind(null, "userShow")} >User page</a></li>
             <li><a onClick={this.handleClick.bind(null, "claimEvent")} >Claim Events</a></li>
             <li><a onClick={this.handleClick.bind(null, "lineGraph")} >lineGraph </a></li>
