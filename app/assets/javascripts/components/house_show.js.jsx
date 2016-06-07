@@ -5,7 +5,7 @@ var House = React.createClass({
     }
   },
 
-  componentWillMount: function(){
+  getHouseData: function(){
     $.ajax({
       url: '/houses',
       type: 'GET'
@@ -14,21 +14,29 @@ var House = React.createClass({
     }.bind(this));
   },
 
+  componentWillMount: function(){
+    this.getHouseData();
+  },
+
   handleFormSubmit: function(event){
+    var that = this
     event.preventDefault();
+    $('.pieChartContainer').remove()
     data = $(event.target).serialize();
     $.ajax({
       url: '/houses/add',
       type: 'POST',
       data: data
     }).success(function(response){
+      this.getHouseData();
       if (response.errors) {
         var errors = response.errors
         $(".errors").append(`<li> ${errors} </li>`)
       } else {
-        this.props.onAction('house') //not refreshing page with new member on list
+        console.log(this.props) //not refreshing page with new member on list
         var success = response.success
         $(".errors").append(`<li> ${success} </li>`)
+        this.props.onAction('house', {houseMember: true})
       }
     }.bind(this));
   },
@@ -44,7 +52,7 @@ var House = React.createClass({
 
         <ul class="collection">
           {this.state.data.data.map(function(data, i){
-            return <li class="collection-item avatar" key={i}>
+            return <li class="collection-item avatar" className="circle" key={i}>
               <img src={ Gravtastic(data.email) } alt="" class="circle" />
               <span class="title">{data.user_name}</span>
             </li>
@@ -54,14 +62,14 @@ var House = React.createClass({
 
         <h6> Add a new user to your house! </h6>
         <div className="add-member">
-          <form onSubmit={this.handleFormSubmit} className="col s12">
+          <form onSubmit={this.handleFormSubmit} className="col s10">
             <div className="row">
-              <div className="input-field col s12">
+              <div className="input-field col s10">
                 <i className="material-icons prefix">person_pin</i>
                 <input type="text" className="validate" name="name" />
                 <label>Username</label>
               </div>
-              <div className="input-field col s12 center-align">
+              <div className="input-field col s10 center-align">
                 <button className="btn waves-effect waves-light" type="submit" name="action">
                   Add
                 </button>

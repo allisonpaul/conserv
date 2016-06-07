@@ -39,21 +39,24 @@ var PieGraph = React.createClass({
             .padRadius(outerRadius)
             .innerRadius(innerRadius);
 
-        var svg = d3.select(".app-container")
-            .append("div")
-            .attr("class", "pieChartContainer")
-            .classed("svg-container", true)
-            .append("svg")
-            // .attr("width", width)
-            // .attr("height", height)
-            .attr("preserveAspectRatio", "xMinYMin meet")
-            .attr("viewBox", "0 0 " + parseInt(width) + " " + parseInt(height))
-            .attr("id", function() {
-                return "pie"
-            })
-            .append("g")
-            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
-            .classed("svg-content-responsive", true);
+
+  $('.pieChartContainer').remove()
+
+  var svg = d3.select(".app-container")
+    .append("div")
+    .attr("class", "pieChartContainer")
+    .classed("svg-container", true)
+    .append("svg")
+		// .attr("width", width)
+		// .attr("height", height)
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 " + parseInt(width) + " " + parseInt(height))
+		.attr("id", function() {
+			return "pie"
+		})
+		.append("g")
+		.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+    .classed("svg-content-responsive", true);
 
         svg.selectAll("path")
             .data(pie(points))
