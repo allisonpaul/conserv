@@ -54,14 +54,14 @@ var House = React.createClass({
 
         <h6> Add a new user to your house! </h6>
         <div className="add-member">
-          <form onSubmit={this.handleFormSubmit} className="col s12">
+          <form onSubmit={this.handleFormSubmit} className="col s10">
             <div className="row">
-              <div className="input-field col s12">
+              <div className="input-field col s10">
                 <i className="material-icons prefix">person_pin</i>
                 <input type="text" className="validate" name="name" />
                 <label>Username</label>
               </div>
-              <div className="input-field col s12 center-align">
+              <div className="input-field col s10 center-align">
                 <button className="btn waves-effect waves-light" type="submit" name="action">
                   Add
                 </button>

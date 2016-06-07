@@ -19,7 +19,7 @@ var HouseForm = React.createClass({
   render: function(){
     return (
       <div className="house-form-page">
-        <h5> create or find a house </h5>
+        <h1 className="graph-titles"> add or join a house</h1>
         <div className="house-form">
           <form onSubmit={this.handleFormSubmit} className="col s10">
             <div className="row">
@@ -29,7 +29,7 @@ var HouseForm = React.createClass({
                 <label>House name</label>
               </div>
               <div className="input-field col s10 center-align">
-                <button className="btn waves-effect waves-light" type="submit" name="action">
+                <button className="other-buttons" type="submit" name="action">
                 Submit
                 </button>
               </div>
