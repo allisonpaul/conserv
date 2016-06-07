@@ -21,20 +21,35 @@ var House = React.createClass({
       url: '/houses/add',
       type: 'POST',
       data: data
-    })
+    }).success(function(response){
+      if (response.errors) {
+        var errors = response.errors
+        $(".errors").append(`<li> ${errors} </li>`)
+      } else {
+        this.props.onAction('house') //not refreshing page with new member on list
+        var success = response.success
+        $(".errors").append(`<li> ${success} </li>`)
+      }
+    }.bind(this));
   },
 
   render: function(){
     if (this.state.data != undefined) {
       return (
       <div className="house-info">
-        <PieGraph />
+
+
         <h3> { this.state.data.data[0].house_name } </h3>
         <h5> Current Members: </h5>
-        <ul>
-          {this.state.data.data.map(function(data, i) {
-            return <li key={i}>{data.user_name}</li>
+
+        <ul class="collection">
+          {this.state.data.data.map(function(data, i){
+            return <li class="collection-item avatar" key={i}>
+              <img src={ Gravtastic(data.email) } alt="" class="circle" />
+              <span class="title">{data.user_name}</span>
+            </li>
           })}
+        <PieGraph />
         </ul>
 
         <h6> Add a new user to your house! </h6>
@@ -53,6 +68,9 @@ var House = React.createClass({
               </div>
             </div>
           </form>
+          <div className="errors-div">
+            <ul className="errors"></ul>
+          </div>
         </div>
 
       </div>
