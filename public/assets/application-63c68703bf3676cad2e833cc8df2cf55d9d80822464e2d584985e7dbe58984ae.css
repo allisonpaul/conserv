@@ -1,0 +1,151 @@
+/* line 1, /Users/apprentice/Desktop/conserv/conserv/app/assets/stylesheets/a_scaffold.scss */
+body {
+  color: #CEDAC5;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  right: 0;
+  overflow-x: hidden;
+}
+
+/* line 10, /Users/apprentice/Desktop/conserv/conserv/app/assets/stylesheets/a_scaffold.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /Users/apprentice/Desktop/conserv/conserv/app/assets/stylesheets/a_scaffold.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /Users/apprentice/Desktop/conserv/conserv/app/assets/stylesheets/a_scaffold.scss */
+a {
+  color: #000;
+}
+/* line 25, /Users/apprentice/Desktop/conserv/conserv/app/assets/stylesheets/a_scaffold.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /Users/apprentice/Desktop/conserv/conserv/app/assets/stylesheets/a_scaffold.scss */
+a:hover {
+  -webkit-filter: invert(100%) !important;
+}
+
+/* line 35, /Users/apprentice/Desktop/conserv/conserv/app/assets/stylesheets/a_scaffold.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 40, /Users/apprentice/Desktop/conserv/conserv/app/assets/stylesheets/a_scaffold.scss */
+#notice {
+  color: green;
+}
+
+/* line 44, /Users/apprentice/Desktop/conserv/conserv/app/assets/stylesheets/a_scaffold.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 50, /Users/apprentice/Desktop/conserv/conserv/app/assets/stylesheets/a_scaffold.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 58, /Users/apprentice/Desktop/conserv/conserv/app/assets/stylesheets/a_scaffold.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 69, /Users/apprentice/Desktop/conserv/conserv/app/assets/stylesheets/a_scaffold.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+nav {
+  background-color: whitesmoke;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+}
+
+nav .brand-logo {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 0;
+  white-space: nowrap;
+}
+
+#register-button{
+  color:#cedac5;
+  font-family: helvetica;
+}
+
+.login-form{
+  margin-top: 15%;
+  left:auto;
+}
+
+@media only screen and (max-width: 480px) {
+    table {
+        width:100%;
+}
+
+.btn:hover, .btn-large:hover {
+  background-color: #9EA792;
+}
+
+button:focus {
+  outline: none;
+  background-color: #9EA792;
+}
+
+#container {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#drop-down-menu {
+  display: block;
+  margin-top: 500px;
+  border: 1px solid red;
+}
+
+.app-container{
+  height: 100vh;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
