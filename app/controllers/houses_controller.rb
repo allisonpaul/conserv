@@ -6,7 +6,7 @@ class HousesController < ApplicationController
     @house_members = User.where(house_id: @house.id)
     data = []
     @house_members.each do |member|
-      data << { "house_name" => @house.name, "user_name" => member.username }
+      data << { "house_name" => @house.name, "user_name" => member.username, "email" => member.email }
     end
     render json: {data: data}
   end
@@ -35,7 +35,8 @@ class HousesController < ApplicationController
     if @new_member && @new_member.house_id == nil
       @new_member.house_id = @house.id
       @new_member.save
-      render json: { new_member: @new_member }
+      @success = "#{@new_member.username} has been successfully added!"
+      render json: { success: @success }
     else
       @errors = "User does not exit or already part of a house!"
       render json: { errors: @errors}
