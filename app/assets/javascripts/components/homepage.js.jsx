@@ -3,7 +3,7 @@ var HomePage = React.createClass({
 
     return <div>
 
-      <h1> WELCOME TO CONSERV. USE THE MENU TO NAVIGATE</h1>
+      <h1> WELCOME TO CONSERV. USE THE MENU TO NAVIGATE </h1>
 
     </div>
   }
