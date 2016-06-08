@@ -1,9 +1,9 @@
 @keyframes example {
     from {
-        background-color: #CEDAC5;
+        background-color: #2D363A;
     }
     to {
-        background-color: #1e403f;
+        background-color: #7d95a0;
 
     }
 }
@@ -14,9 +14,9 @@
     margin-top: 5%;
 }
 .barChart {
-    font: 14px sans-serif;
-    background-color: #1e403f;
-    text-align: right;
+    font: 14px;
+    background-color: #7d95a0;
+    text-align: ;
     padding: 2%;
     border-radius: 10px;
     margin: 3%;
@@ -24,7 +24,11 @@
     animation-duration: 2s;
     transition: width 2s;
     transition: color 2s;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid #2D363A;
 }
+
 #pie {
     fill: steelblue;
     transition: fill 250ms linear;
@@ -58,13 +62,14 @@ polyline {
     fill: none;
 }
 #legContent {
-    font-size: 2em;
+    font-size: 1em;
     text-align: center;
-    padding-top: 5%;
-    height: 80px;
-    width: 250px;
+   /* padding-top: 5%;*/
+    height: 25px;
+    width: 150px;
     border-radius: 10px;
 }
+
 .svg-container {
     display: block;
     position: relative;
@@ -76,12 +81,14 @@ polyline {
     margin-left: auto;
     margin-right: auto;
 }
+
 .svg-content-responsive {
     display: inline-block;
     position: absolute;
     top: 10px;
     left: 0;
 }
+
 .lineChartContainer {
     background-color: rgba(245, 245, 245, 0.95);
     border-radius: 12px;
@@ -98,17 +105,18 @@ polyline {
     overflow: hidden;
     margin: 10% auto;
     background-color: rgba(245, 245, 245, 0.95);
-    border-radius: 12px;
+    border-radius: 6px;
 }
+
 .datapoint:hover {
-    fill: steelblue;
+    fill: #042E3B;
 }
 
 .d3-tip {
   font-size: 1.2em;
   font-weight: bold;
   padding: 12px;
-  background: rgba(0,0,0,0.9);
-  color: whitesmoke;
+ /* background: rgba(0,0,0,0.9);*/
+  color: orange;
   border-radius: 12px;
 }

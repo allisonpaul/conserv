@@ -57,9 +57,6 @@ var House = React.createClass({
             </li>
           })}
         </ul>
-
-
-        <h6> Add a new user to your house! </h6>
         <div className="add-member">
           <form onSubmit={this.handleFormSubmit} className="col s10">
             <div className="row">
@@ -69,7 +66,7 @@ var House = React.createClass({
                 <label>Username</label>
               </div>
               <div className="input-field col s10 center-align">
-                <button className="other-buttons" type="submit" name="action">
+                <button className="register-button" type="submit" name="action">
                   Add
                 </button>
               </div>
