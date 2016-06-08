@@ -45,7 +45,7 @@ var House = React.createClass({
     if(this.state.data.data.length === 1) {
       if (this.state.data.data[0].events.length === 0) {
         return (
-          <span className="no-events-notice"> You currently have no events </span>
+          <span className="no-events-house"> You currently have no events </span>
         )
       } else {
         return ( <PieGraph /> )

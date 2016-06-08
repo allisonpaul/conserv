@@ -22,7 +22,9 @@ var UserShow = React.createClass ({
   showChart: function() {
     if(this.state.data.events.length === 0) {
       return (
-        <span className="no-events-notice"> You currently have no events </span>
+        <div className="no-event">
+          <span className="no-events-notice"> You currently have no events </span>
+        </div>
       )
     } else {
       return ( <BarGraphContainer /> )
