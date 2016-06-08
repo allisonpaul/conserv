@@ -23,7 +23,7 @@ var App = React.createClass({
   logout: function() {
     this.logoutServer();
     this.setState({
-      screen: "main",
+      screen: "login",
       userLoggedIn: false,
       currentUserID: undefined,
     });

@@ -108,7 +108,7 @@ polyline {
   font-size: 1.2em;
   font-weight: bold;
   padding: 12px;
-  background: #587372;
-  color: steelblue;
+  background: rgba(0,0,0,0.9);
+  color: whitesmoke;
   border-radius: 12px;
 }
