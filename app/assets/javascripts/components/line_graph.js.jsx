@@ -162,18 +162,28 @@ var LineGraph = React.createClass({
             .attr('transform', 'translate(' + width + ', 0)')
     },
 
-    // showChart: function() {
-    //     if(this.state.data. )
-    // }
+    showChart: function() {
+        if(this.state.data != undefined) {
+            if(this.state.data.data.length === 0) {
+                return (
+                    <span className="no-events-house"> You currently have no events </span>
+                )
+            } else {
+                return (
+                    this.lineGraph(this.state.data.data)
+                )
+            }
+        }
+    },
 
     render: function() {
-        if (this.state.data != undefined) {
-            return <div >
-                < div className = "graph-titles" > < h1 > History < /h1></div > {
-                    this.lineGraph(this.state.data.data)
-                } < /div>
-        } else {
-            return <div > < /div>
-        }
+        return (
+            <div>
+               < div className = "graph-titles" >
+                    < h1 > History < /h1>
+                </div >
+                { this.showChart() }
+            </div>
+        )
     },
 });
