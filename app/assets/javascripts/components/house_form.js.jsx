@@ -42,7 +42,7 @@ var HouseForm = React.createClass({
           </form>
             <div className="row">
                 <div className="input-field col s10 center-align">
-                  < button onClick={this.skipClick.bind(null, "userShow")} className="other-buttons">
+                  < button onClick={this.skipClick.bind(null, "userShow")} className="register-button">
                      Skip for now
                   </button>
                 </div>
