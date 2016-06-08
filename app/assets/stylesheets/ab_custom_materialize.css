@@ -1,6 +1,5 @@
-/*GENERAL BODY*/
 html {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   top:0;
 }
@@ -115,7 +114,6 @@ nav .brand-logo {
   text-align: left;
 }
 
-
 /*LOGIN PAGE*/
 #register-button{
   color:#cedac5;
@@ -150,9 +148,6 @@ nav .brand-logo {
   }
 }
 
-
-
-
 /*graph pages*/
 .graph-titles {
   font-size: 2.5em;
@@ -166,7 +161,6 @@ nav .brand-logo {
   width: 75%;
   margin: auto;
 }
-
 
 @media only screen and (max-device-width: 480px) {
   .btn, .waves-effect, .waves-light{
@@ -225,7 +219,6 @@ nav .brand-logo {
   text-transform: lowercase;
 }
 
-
 /*user page*/
 #avatar{
   border-radius: 100%;
@@ -259,13 +252,7 @@ nav .brand-logo {
 /*register pie*/
 .device-reg {
   min-height: 100vh;
-/*  background: url("conserv");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/
   padding-top: 2%;
-
 }
 
 .device-form{
@@ -307,6 +294,4 @@ nav .brand-logo {
 .row {
   margin-left: auto;
   margin-right: auto;
-/*  margin-bottom: 20px;*/
-/*  margin-top: 10%;*/
 }
