@@ -8,6 +8,7 @@ var App = React.createClass({
       message: undefined,
       houseID: undefined,
       currentUserName: undefined,
+      newUser: false
     }
   },
 
@@ -39,10 +40,6 @@ var App = React.createClass({
     switch(this.state.screen) {
       case "login":
         return <Login onAction={this.updateView} />
-      case "main":
-        if (this.state.userLoggedIn === true) {
-          return <HomePage onAction={this.updateView}/>
-        } else { return <Login onAction={this.updateView} /> }
       case "register":
         return <Register onAction={this.updateView} />
       case "device":
@@ -50,7 +47,9 @@ var App = React.createClass({
       case "deviceFound":
         return <DeviceFound onAction={this.updateView} message={this.state.message} houseID={this.state.houseID} />
       case "userShow":
-        return <UserShow onAction={this.updateView} />
+        if (this.state.userLoggedIn === true) {
+          return <UserShow onAction={this.updateView} />
+        } else { return <Login onAction={this.updateView} /> }
       case "claimEvent":
         return <ClaimEvent onAction={this.updateView} />
       case "lineGraph":
@@ -63,7 +62,7 @@ var App = React.createClass({
       if (this.state.houseMember === true) {
         return <House onAction={this.updateView} />
       } else {
-        return <HouseForm onAction={this.updateView} />
+        return <HouseForm onAction={this.updateView} newUser={this.state.newUser} />
       }
       case "logout":
         this.logout()
