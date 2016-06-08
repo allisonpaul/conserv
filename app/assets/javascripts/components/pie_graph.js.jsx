@@ -20,7 +20,7 @@ var PieGraph = React.createClass({
 
         var points = [];
         var usernames = [];
-        var colors = ['#00040D', '#9EA792', '#333B3D'];
+        var colors = ['#17362C', '#7DA792', '#8FB8B8', '#333B3D','#17362C', '#7DA792', '#8FB8B8', '#333B3D','#17362C', '#7DA792', '#8FB8B8', '#333B3D','#17362C', '#7DA792', '#8FB8B8', '#333B3D'];
         //'#65756B'
 
         data.forEach(function(i) {
@@ -44,7 +44,7 @@ var PieGraph = React.createClass({
 
   var svg = d3.select(".app-container")
     .selectAll(".house-info")
-    .insert("div", ":nth-child(4)")
+    .insert("div", ":nth-child(3)")
     .attr("class", "pieChartContainer")
     .classed("svg-container", true)
     .append("svg")
