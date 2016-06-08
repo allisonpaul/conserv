@@ -68,7 +68,7 @@ var LineGraph = React.createClass({
             // .attr("width", width + margin.left + margin.right)
             // .attr("height", height + margin.top + margin.bottom)
             .attr("preserveAspectRatio", "xMinYMin meet")
-            .attr("viewBox", "0 0 " + parseInt(widthInput) + " " + parseInt(heightInput))
+            .attr("viewBox", "0 0 " + parseInt(widthInput + 10) + " " + parseInt(heightInput + 10))
             //  .attr("id", function() {return "valLine"})
             .append("g")
             .attr("transform",
@@ -143,7 +143,7 @@ var LineGraph = React.createClass({
             .attr('width', width + 10)
             .attr('class', 'curtain')
             .attr('transform', 'rotate(180)')
-            .style('fill', 'whitesmoke')
+            .style('fill', 'rgb(245, 245, 245)')
 
         var t = svg.transition()
             .delay(750)

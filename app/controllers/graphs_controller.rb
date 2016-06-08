@@ -28,7 +28,7 @@ class GraphsController < ApplicationController
 
     data = []
     @events.each do |event|
-      data << { "date" => event.start_time.strftime('%b %d, %Y'),
+      data << { "date" => event.start_time.strftime('%b %d'),
                 "points" => event.points.to_i}
     end
     nasty_data = data.group_by {|event| event["date"]}
