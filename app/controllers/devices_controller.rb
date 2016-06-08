@@ -23,6 +23,8 @@ class DevicesController < ApplicationController
   if @device && @exist_users && @exist_house
       @found = "#{@house_user.username} with the same device is part of #{@exist_house.name}, would you like to join?"
       @id = @exist_house.id
+      current_user.device_id = @device.id
+      current_user.save
       render json: { found: @found, id: @id }
     else
       @new_device = Device.create(code: params[:code])

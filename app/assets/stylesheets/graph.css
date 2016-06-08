@@ -73,7 +73,8 @@ polyline {
     /* aspect ratio */
     vertical-align: top;
     overflow: hidden;
-    margin: 15% auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 .svg-content-responsive {
     display: inline-block;
@@ -84,6 +85,7 @@ polyline {
 .lineChartContainer {
     background-color: rgba(245, 245, 245, 0.95);
     border-radius: 12px;
+    margin-top: 5%;
 }
 
 #bargraph {
@@ -103,11 +105,10 @@ polyline {
 }
 
 .d3-tip {
-  line-height: 1;
   font-size: 1.2em;
   font-weight: bold;
   padding: 12px;
-  background: rgba(0, 0, 0, 0.9);
+  background: #587372;
   color: steelblue;
   border-radius: 12px;
 }
