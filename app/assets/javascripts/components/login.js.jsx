@@ -9,6 +9,7 @@ var Login = React.createClass({
     })
     request.done(function(response){
       if (response.errors) {
+        $(".errors").find("li").remove()
         var errorsList = response.errors
         $(".errors").append(`<li> ${errorsList} </li>`)
       } else {
@@ -45,6 +46,10 @@ var Login = React.createClass({
               <label>Password</label>
             </div>
             </div>
+              <div className="errors-div">
+                <ul className="errors">
+                </ul>
+              </div>
             <div className="row">
             <div className="input-field col s10 center-align">
               <button className="btn waves-effect waves-light" type="submit" name="action" id="button-text">login
@@ -56,10 +61,7 @@ var Login = React.createClass({
         </form>
 
 
-          <div className="errors-div">
-            <ul className="errors">
-            </ul>
-          </div>
+
       </div>
     )
   }
