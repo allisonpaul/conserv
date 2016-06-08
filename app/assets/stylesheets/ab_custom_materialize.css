@@ -309,6 +309,14 @@ nav .brand-logo {
 /*  margin-top: 10%;*/
 }
 
+.no-event {
+  min-height: 200px;
+}
+
+.no-events-notice {
+  padding-top: 150px;
+  display: inline-block;
+}
 
 .water-fact{
   background-color: whitesmoke;
@@ -350,5 +358,6 @@ span {
 
 .thumbs{
   width: 100%;
-  text-align:center; 
+  text-align:center;
 }
+

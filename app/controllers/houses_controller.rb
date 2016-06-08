@@ -6,7 +6,7 @@ class HousesController < ApplicationController
     @house_members = User.where(house_id: @house.id)
     data = []
     @house_members.each do |member|
-      data << { "house_name" => @house.name, "user_name" => member.username, "email" => member.email }
+      data << { "house_name" => @house.name, "user_name" => member.username, "email" => member.email, "events" => @user.events }
     end
     render json: {data: data}
   end

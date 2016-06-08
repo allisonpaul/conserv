@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   belongs_to :device
   belongs_to :house
-  has_many  :events
+  has_many  :events, class_name: "Event", foreign_key: "event_claimer_id"
 
   # validates :username, :email, { presence: true }
   # validates :password_digest, { length: { minimum: 4}}

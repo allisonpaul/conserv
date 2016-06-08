@@ -19,6 +19,18 @@ var UserShow = React.createClass ({
     return array[Math.floor(Math.random()*array.length)];
   },
 
+  showChart: function() {
+    if(this.state.data.events.length === 0) {
+      return (
+        <div className="no-event">
+          <span className="no-events-notice"> You currently have no events </span>
+        </div>
+      )
+    } else {
+      return ( <BarGraphContainer /> )
+    }
+  },
+
   render: function(){
     var waterFacts = [
       'The United States uses about 346,000 million gallons of fresh water every day.',
