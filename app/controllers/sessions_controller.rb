@@ -7,7 +7,10 @@ class SessionsController < ActionController::Base
   # user logs in
   def create
     @user = User.find_by(email: params[:email])
-    @house = House.find_by(id: @user.house_id)
+    if @user
+      @house = House.find_by(id: @user.house_id)
+    end
+
     if @user && @user.authenticate(params[:password])
       if @house == nil
         session[:user_id] = @user.id
