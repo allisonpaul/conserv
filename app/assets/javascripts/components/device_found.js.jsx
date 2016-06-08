@@ -17,12 +17,14 @@ var DeviceFound = React.createClass({
     return (
       <div className="device-found">
         <h3 className="graph-titles">{ this.props.message }</h3>
-        <a onClick={this.joinClick.bind(null, "house")} className="btn-floating btn-large waves-effect waves-light blue">
+        <div className="thumbs">
+        <a onClick={this.joinClick.bind(null, "house")} className="btn-floating btn-large">
           <i className="material-icons left">thumb_up</i>
         </a>
-        <a onClick={this.handleClick.bind(null, "userShow")} className="btn-floating btn-large waves-effect waves-light blue">
+        <a onClick={this.handleClick.bind(null, "userShow")} className="btn-floating btn-large">
           <i className="material-icons left">thumb_down</i>
         </a>
+        </div>
       </div>
     )
   }
