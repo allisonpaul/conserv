@@ -6,7 +6,8 @@ var App = React.createClass({
       currentUserID: undefined,
       houseMember: false,
       message: undefined,
-      houseID: undefined
+      houseID: undefined,
+      currentUserName: undefined,
     }
   },
 
@@ -70,7 +71,11 @@ var App = React.createClass({
   },
   render: function(){
     return <div className="app-container">
-    < NavBar onAction={this.updateView} />
+    <NavBar
+      onAction={this.updateView}
+      userLoggedIn={this.state.userLoggedIn}
+      currentUserName={this.state.currentUserName} />
+
       {this.updateScreenContent()}
     </div>
   },

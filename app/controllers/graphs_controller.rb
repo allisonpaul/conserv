@@ -1,7 +1,7 @@
 class GraphsController < ApplicationController
 
   def line
-    @events = Event.where(device_id: 1)
+    @events = Event.where(event_claimer_id: current_user.id)
     @events = @events.order(:start_time)
     data = []
 
@@ -23,7 +23,7 @@ class GraphsController < ApplicationController
   end
 
   def bar
-    @events = Event.where(device_id: 1)
+    @events = Event.where(event_claimer_id: current_user.id)
     @events = @events.order(:start_time)
 
     data = []
