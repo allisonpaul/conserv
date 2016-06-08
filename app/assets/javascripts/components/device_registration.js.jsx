@@ -27,7 +27,7 @@ var DeviceReg  = React.createClass({
               <label>Rasberry Pi Code</label>
             </div>
             <div className="input-field col s10 center-align">
-              <button className="btn" type="submit" name="action">
+              <button className="register-button" type="submit" name="action">
               register your device
               </button>
             </div>
