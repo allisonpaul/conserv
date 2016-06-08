@@ -30,7 +30,7 @@ var LineGraph = React.createClass({
                 left: 50
             },
             width = windowSize - margin.left - margin.right,
-            height = windowSize  - margin.top - margin.bottom;
+            height = windowSize  - margin.top;
 
         // Parse the date / time  ---- this is wonky
         var parseDate = d3.time.format("%Y-%m-%d").parse;
@@ -113,7 +113,7 @@ var LineGraph = React.createClass({
             .attr('class', 'd3-tip')
             .offset([-30, 0])
             .html(function(d) {
-                return "<span style='color:steelblue'>" + d.points + "</span>";
+                return "<span style='color:#042E3B'>" + d.points + "</span>";
             });
 
         svg.call(tip);

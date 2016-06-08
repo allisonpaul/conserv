@@ -41,11 +41,13 @@ var UserShow = React.createClass ({
       return(
         <div>
           <div>
-            <h1 id="username">{this.state.data.username}</h1>
+            <h1 id="username">{this.state.data.username}'s <br/> <span id="sub-t">recent activity</span></h1>
             <img id="avatar" src={ Gravtastic(this.state.data.email) } />
           </div>
           <BarGraphContainer />
-          <p> water fact: { this.randFact(waterFacts) } </p>
+          <div className="fact">
+          <p className="water-fact"> <h6 id="fact">Did you know?</h6><br/> { this.randFact(waterFacts) } </p>
+          </div>
         </div>
       )
     } else {
