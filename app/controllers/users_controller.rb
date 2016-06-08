@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(current_user.id)
-    render json: { email: @user.email, username: @user.username }
+    render json: { email: @user.email, username: @user.username, events: @user.events }
   end
 
   private

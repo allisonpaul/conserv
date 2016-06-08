@@ -1,9 +1,9 @@
 @keyframes example {
     from {
-        background-color: #CEDAC5;
+        background-color: #2D363A;
     }
     to {
-        background-color: #1e403f;
+        background-color: #7d95a0;
 
     }
 }
@@ -47,13 +47,14 @@ polyline {
     fill: none;
 }
 #legContent {
-    font-size: 2em;
+    font-size: 1em;
     text-align: center;
-    padding-top: 5%;
-    height: 80px;
-    width: 250px;
+   /* padding-top: 5%;*/
+    height: 25px;
+    width: 150px;
     border-radius: 10px;
 }
+
 .svg-container {
     display: block;
     position: relative;
@@ -65,12 +66,14 @@ polyline {
     margin-left: auto;
     margin-right: auto;
 }
+
 .svg-content-responsive {
     display: inline-block;
     position: absolute;
     top: 10px;
     left: 0;
 }
+
 .lineChartContainer {
     background-color: whitesmoke;
     border-radius: 12px;
@@ -87,24 +90,25 @@ polyline {
     overflow: hidden;
     margin: 10% auto;
     background-color: rgba(245, 245, 245, 0.95);
-    border-radius: 12px;
+    border-radius: 6px;
 }
+
 .datapoint:hover {
-    fill: steelblue;
+    fill: #042E3B;
 }
 
 .d3-tip {
   font-size: 1.2em;
   font-weight: bold;
   padding: 12px;
-  background: rgba(0,0,0,0.9);
-  color: whitesmoke;
+ /* background: rgba(0,0,0,0.9);*/
+  color: orange;
   border-radius: 12px;
 }
 
 .barChart {
-    font: 14px sans-serif;
-    background-color: #1e403f;
+    font-size: 13px;
+    background-color: #7d95a0;
     text-align: right;
     padding: 1% 3% 1% 1%;
     border-top-right-radius: 10px;
@@ -118,10 +122,12 @@ polyline {
 }
 
 .date-t {
+    height: 5%;
+    font-size: 14px;
     display: inline !important;
     background-color: #333b3d !important;
     color:whitesmoke;
-    padding: 1% 1% 1% 3%;
+    padding: .8% 1% 1.3% 3%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 
