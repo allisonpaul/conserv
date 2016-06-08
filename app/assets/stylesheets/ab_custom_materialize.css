@@ -274,3 +274,10 @@ nav .brand-logo {
 .house-form{
   margin-top: 21%;
 }
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+/*  margin-bottom: 20px;*/
+/*  margin-top: 10%;*/
+}

@@ -73,7 +73,7 @@ polyline {
     /* aspect ratio */
     vertical-align: top;
     overflow: hidden;
-    margin: 15% auto;
+    margin: 10% auto;
 }
 .svg-content-responsive {
     display: inline-block;
