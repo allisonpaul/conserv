@@ -12,7 +12,11 @@ var Login = React.createClass({
         var errorsList = response.errors
         $(".errors").append(`<li> ${errorsList} </li>`)
       } else {
-        this.props.onAction('userShow', { currentUserID: response.user_id, userLoggedIn: true, houseMember: response.house_member })
+        this.props.onAction('userShow', {
+          currentUserID: response.user_id,
+          userLoggedIn: true,
+          houseMember: response.house_member,
+          currentUserName: response.currentUserName, })
       }
     }.bind(this))
   },

@@ -43,7 +43,8 @@ var PieGraph = React.createClass({
   $('.pieChartContainer').remove()
 
   var svg = d3.select(".app-container")
-    .append("div")
+    .selectAll(".house-info")
+    .insert("div", ":nth-child(4)")
     .attr("class", "pieChartContainer")
     .classed("svg-container", true)
     .append("svg")

@@ -4,16 +4,23 @@ class SessionsController < ActionController::Base
     @user = User.new
   end
 
+  # user logs in
   def create
     @user = User.find_by(email: params[:email])
     @house = House.find_by(id: @user.house_id)
     if @user && @user.authenticate(params[:password])
       if @house == nil
         session[:user_id] = @user.id
-        render json: { user_id: session[:user_id], house_member: false }
+        render json: {  user_id: session[:user_id],
+                        house_member: false,
+                        currentUserName: @user.username,
+                      }
       else
         session[:user_id] = @user.id
-        render json: { user_id: session[:user_id], house_member: true }
+        render json: {  user_id: session[:user_id],
+                        house_member: true,
+                        currentUserName: @user.username,
+                      }
       end
     else
       @errors = "Invalid Credentials"

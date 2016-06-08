@@ -1,23 +1,24 @@
 class EventsController < ApplicationController
   def index
-    all_events = Event.where(device_id: 1)
-    # need to add column to DB  to link a device to a user
-    # device_owner_id = current_user.id
-
+    all_events = Event.where(device_id: current_user.device_id)
     unclaimed_events = []
+
     all_events.each do |event|
-      unclaimed_events << { event_date: event.start_time.strftime('%A, %b %d'),
-                            event_time: event.start_time.strftime('%I:%M %p'),
-                            points: event.points,
-                            id: event.id }
+      if event.event_claimer_id == nil
+        unclaimed_events << { event_date: event.start_time.strftime('%a, %b %d'),
+                              event_time: event.start_time.strftime('%I:%M %p'),
+                              points: event.points,
+                              id: event.id
+                            }
+      end
     end
-    # unclaimed_events = all_events.where(event_claimer_id: nil)
     render json: { events: unclaimed_events }
   end
 
   def generate_events
     e = Event.create
     e.create_events(1)
+    e.destroy
     redirect_to '/'
   end
 
