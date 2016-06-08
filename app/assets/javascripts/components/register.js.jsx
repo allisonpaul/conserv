@@ -39,7 +39,7 @@ var Register = React.createClass({
               <label>Password</label>
             </div>
             <div className="input-field col s10 center-align">
-              <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+              <button className="btn waves-effect waves-light" type="submit" name="action">register
               </button>
             </div>
           </div>

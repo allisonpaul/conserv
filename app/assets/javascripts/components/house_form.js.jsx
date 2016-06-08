@@ -38,11 +38,15 @@ var HouseForm = React.createClass({
                   Submit
                   </button>
                 </div>
-                <a onClick={this.skipClick.bind(null, "userShow")} className="waves-effect waves-light btn">
-                   Skip for now
-                </a>
                 </div>
           </form>
+            <div className="row">
+                <div className="input-field col s10 center-align">
+                  < button onClick={this.skipClick.bind(null, "userShow")} className="other-buttons">
+                     Skip for now
+                  </button>
+                </div>
+           </div>
           <div className="errors-div">
             <ul className="errors">
             </ul>

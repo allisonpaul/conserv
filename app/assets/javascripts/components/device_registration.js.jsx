@@ -18,8 +18,6 @@ var DeviceReg  = React.createClass({
 
   render: function() {
     return <div className="device-reg">
-      <h3>Register Your Rasberry Pi</h3>
-
       <div className="device-form">
         <form onSubmit={this.handleFormSubmit} className="col s10">
           <div className="row">
@@ -29,8 +27,8 @@ var DeviceReg  = React.createClass({
               <label>Rasberry Pi Code</label>
             </div>
             <div className="input-field col s10 center-align">
-              <button className="other-buttons" type="submit" name="action">
-              Submit
+              <button className="btn" type="submit" name="action">
+              register your device
               </button>
             </div>
           </div>
