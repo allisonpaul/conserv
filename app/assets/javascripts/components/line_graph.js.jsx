@@ -160,10 +160,11 @@ var LineGraph = React.createClass({
             .attr('width', 0);
         t.select('line.guide')
             .attr('transform', 'translate(' + width + ', 0)')
-
-
-
     },
+
+    // showChart: function() {
+    //     if(this.state.data. )
+    // }
 
     render: function() {
         if (this.state.data != undefined) {

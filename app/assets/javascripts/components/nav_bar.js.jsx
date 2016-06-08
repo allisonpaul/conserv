@@ -8,7 +8,7 @@ var NavBar = React.createClass ({
     if(this.props.userLoggedIn === true) {
       return (
         <div>
-          <li><a onClick={this.handleClick.bind(null, "userShow")} >Hi, {this.props.currentUserName}!</a></li>
+          <li><a onClick={this.handleClick.bind(null, "userShow")} >{this.props.currentUserName}</a></li>
           <li><a onClick={this.handleClick.bind(null, "claimEvent")} >Claim Events</a></li>
           <li><a onClick={this.handleClick.bind(null, "lineGraph")} >History </a></li>
           <li><a onClick={this.handleClick.bind(null, "house")} >House</a></li>

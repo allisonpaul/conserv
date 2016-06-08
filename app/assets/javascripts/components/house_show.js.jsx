@@ -41,13 +41,27 @@ var House = React.createClass({
     }.bind(this));
   },
 
+  showChart: function() {
+    if(this.state.data.data.length === 1) {
+      if (this.state.data.data[0].events.length === 0) {
+        return (
+          <span className="no-events-notice"> You currently have no events </span>
+        )
+      } else {
+        return ( <PieGraph /> )
+      }
+    } else {
+      return ( <PieGraph /> )
+    }
+  },
+
   render: function(){
     if (this.state.data != undefined) {
       return (
       <div className="house-info">
         <h3 className="graph-titles"> { this.state.data.data[0].house_name } </h3>
         <div>
-          <PieGraph />
+          { this.showChart()}
         </div>
 
         <ul>
@@ -79,7 +93,6 @@ var House = React.createClass({
             <ul className="errors"></ul>
           </div>
         </div>
-
       </div>
       )
     } else {

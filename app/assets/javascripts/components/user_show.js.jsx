@@ -19,6 +19,16 @@ var UserShow = React.createClass ({
     return array[Math.floor(Math.random()*array.length)];
   },
 
+  showChart: function() {
+    if(this.state.data.events.length === 0) {
+      return (
+        <span className="no-events-notice"> You currently have no events </span>
+      )
+    } else {
+      return ( <BarGraphContainer /> )
+    }
+  },
+
   render: function(){
     var waterFacts = [
       'The United States uses about 346,000 million gallons of fresh water every day.',
@@ -44,7 +54,7 @@ var UserShow = React.createClass ({
             <h1 id="username">{this.state.data.username}</h1>
             <img id="avatar" src={ Gravtastic(this.state.data.email) } />
           </div>
-          <BarGraphContainer />
+          { this.showChart() }
           <p> water fact: { this.randFact(waterFacts) } </p>
         </div>
       )
