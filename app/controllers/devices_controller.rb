@@ -21,7 +21,7 @@ class DevicesController < ApplicationController
     end
 
   if @device && @exist_users && @exist_house
-      @found = "#{@house_user.username} with the same device is part of #{@exist_house.name}, would you like to join?"
+      @found = "#{@house_user.username} with the same device is in a house called: #{@exist_house.name}, would you like to join?"
       @id = @exist_house.id
       render json: { found: @found, id: @id }
     else

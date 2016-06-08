@@ -11,7 +11,7 @@ var DeviceReg  = React.createClass({
       if (response.found) {
         this.props.onAction('deviceFound', {message: response.found, houseID: response.id})
       } else {
-        this.props.onAction('house')
+        this.props.onAction('house', {newUser: true} )
       }
     }.bind(this));
   },
