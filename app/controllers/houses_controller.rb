@@ -16,6 +16,11 @@ class HousesController < ApplicationController
   end
 
   def create
+    if params[:name] == ""
+      render json: {errors: "Cannot be blank!"}
+      return false
+    end
+
     @house = House.find_or_create_by(name: params[:name])
     @user = current_user
     if @user && @user.house_id == nil
