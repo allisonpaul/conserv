@@ -23,7 +23,9 @@ var UserShow = React.createClass ({
     if(this.state.data.events.length === 0) {
       return (
         <div className="no-event">
-          <span className="no-events-notice"> You currently have no events </span>
+          <div className="no-events-notice"> 
+            You currently have no events 
+          </div>
         </div>
       )
     } else {
@@ -59,7 +61,7 @@ var UserShow = React.createClass ({
           { this.showChart() }
 
           <div className="fact">
-          <p className="water-fact"> <h6 id="fact">Did you know?</h6><br/> { this.randFact(waterFacts) } </p>
+          <div className="water-fact"> <h6 id="fact">Did you know?</h6><br/> { this.randFact(waterFacts) } </div>
           </div>
         </div>
       )

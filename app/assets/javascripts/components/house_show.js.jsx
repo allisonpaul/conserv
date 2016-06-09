@@ -30,6 +30,7 @@ var House = React.createClass({
     }).success(function(response){
       this.getHouseData();
       if (response.errors) {
+        $(".errors").find("li").remove()
         var errors = response.errors
         $(".errors").append(`<li> ${errors} </li>`)
       } else {

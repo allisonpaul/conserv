@@ -10,14 +10,14 @@ var NavBar = React.createClass ({
         <div>
           <li><a onClick={this.handleClick.bind(null, "userShow")} >{this.props.currentUserName}</a></li>
           <li><a onClick={this.handleClick.bind(null, "claimEvent")} >Claim Events</a></li>
-          <li><a onClick={this.handleClick.bind(null, "lineGraph")} >History </a></li>
+          <li><a onClick={this.handleClick.bind(null, "lineGraph")} >Progress</a></li>
           <li><a onClick={this.handleClick.bind(null, "house")} >House</a></li>
           <li><a onClick={this.handleClick.bind(null, "logout")} >Logout</a></li>
         </div>
       )
     } else {
       return (
-        <p> WELCOME TO CONSERV. PLEASE LOGIN TO HAVE ACCESS. </p>
+        <p id="login-nav-message"> WELCOME TO CONSERV. PLEASE LOGIN TO HAVE ACCESS. </p>
       )
     }
   },

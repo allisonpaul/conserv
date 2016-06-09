@@ -156,7 +156,7 @@ ul li {
 .graph-titles {
   font-size: 1.5em;
   text-align: center;
-  color: #2D363A;
+  color: whitesmoke;
   font-family: 'Montserrat', sans-serif;
   padding: 1%;
 }
@@ -196,7 +196,8 @@ ul li {
   text-transform: uppercase;
   box-sizing: inherit;
   color: #333b3d;
-  font-family: 'Quicksand';
+  font-weight:bold;
+  font-family: 'Montserrat';
 }
 
 .other-buttons {
@@ -227,11 +228,11 @@ ul li {
   display:inline;
   float:left;
   margin-left: 10%;
-  margin-top: 4%;
+  margin-top: 5%;
   font-size: 3em;
   margin-bottom: 4%;
-  color:#2D363A;
-  font-family: 'Montserrat', sans-serif;;
+  color:whitesmoke;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /*errors*/
@@ -356,4 +357,54 @@ span {
 .thumbs{
   width: 100%;
   text-align:center;
+  margin-top:40%;
+}
+
+#event-sentence {
+  width: 100%;
+  text-align:center;
+  margin-top: -18px;
+}
+
+.event-points {
+  display: inline;
+  color: orange;
+  font-weight:bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.no-events-notice{
+  display: block;
+  position: relative;
+  width: 90%;
+  padding: 4%;
+  vertical-align: top;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(245, 245, 245, 0.75);
+  border-radius: 6px;
+  color: #587372;
+  margin-bottom: -12px;
+  text-align:center;
+}
+
+.device-found-text{
+  font-size: 3.5em;
+  text-align: center;
+  color: whitesmoke;
+  font-family: 'Montserrat', sans-serif;
+  padding: 8%;
+}
+
+#house-name {
+  font-size: 1em;
+  text-align: center;
+  color: #042E3B;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1%;
+}
+
+#login-nav-message{
+  color:black;
 }

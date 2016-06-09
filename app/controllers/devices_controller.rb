@@ -21,15 +21,20 @@ class DevicesController < ApplicationController
     end
 
   if @device && @exist_users && @exist_house
-      @found = "Join #{@exist_house.name}?"
+      @found = "#{@exist_house.name}"
       @id = @exist_house.id
       current_user.device_id = @device.id
       current_user.save
       render json: { found: @found, id: @id }
     else
       @new_device = Device.create(code: params[:code])
-      current_user.device_id = @new_device.id
-      current_user.save
+        if @new_device
+          current_user.device_id = @new_device.id
+          current_user.save
+        else
+          @errors = @user.errors.full_messages
+          render json: { errrors: @errors }
+        end
     end
   end
 
