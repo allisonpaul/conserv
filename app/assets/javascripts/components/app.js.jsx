@@ -13,9 +13,22 @@ var App = React.createClass({
     }
   },
 
+  getUserPoints: function() {
+      $.ajax({
+          url: '/users/show',
+          type: "GET"
+      }).success(function(response){
+          console.log(response.averagePoints)
+          this.setState({
+              userAveragePoints: response.averagePoints
+          });
+      }.bind(this))
+  },
+
   updateView: function(newView, options = {}) {
     if ($('.lineChartContainer') != []) { $('.lineChartContainer').remove() }
-    $('.pieChartContainer').remove()
+    $('.pieChartContainer').remove();
+    this.getUserPoints();
     this.setState({ screen: newView });
     this.setState(options);
     // this.updateScreenContent();
@@ -23,11 +36,7 @@ var App = React.createClass({
 
   logout: function() {
     this.logoutServer();
-    this.setState({
-      screen: "login",
-      userLoggedIn: false,
-      currentUserID: undefined,
-    });
+    window.location.href = "http://conserv.herokuapp.com";
   },
 
   logoutServer: function() {
