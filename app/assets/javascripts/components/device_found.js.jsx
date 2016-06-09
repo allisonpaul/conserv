@@ -16,8 +16,8 @@ var DeviceFound = React.createClass({
   render: function(){
     return (
       <div className="device-found">
-        <h3 className="graph-titles">device found!</h3>
-        <h3 className="graph-titles">{ this.props.message }</h3>
+        <h3 className="device-found-text">device found join
+        <span id="house-name"> { this.props.message }</span>?</h3>
         <div className="thumbs">
         <a onClick={this.joinClick.bind(null, "house")} className="btn-floating btn-large">
           <i className="material-icons left">thumb_up</i>
