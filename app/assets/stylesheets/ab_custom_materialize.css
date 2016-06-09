@@ -21,11 +21,6 @@ body {
   }
 }
 
-button:focus {
-  outline: none;
-  background-color: #9EA792;
-}
-
 #container {
   height: 100vh;
   width: 100%;
@@ -43,21 +38,10 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #BDC8B1 inset !important;
 }
 
-@media only screen and (min-width: 601px) {
-  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
-    height: 104px;
-    line-height: 104px;
-  }
-}
-
-a {
-  text-decoration: none;
-  text-align: center;
-}
-
-ul li {
-  list-style-type: none;
-  display:inline;
+/*GENERAL BUTTON STYLING*/
+button:focus {
+  outline: none;
+  background-color: #9EA792;
 }
 
 .btn, .btn-large,
@@ -66,11 +50,8 @@ ul li {
   border: none;
   border-radius: 12px;
   display: inline-block;
- /* height: 36px;*/
   line-height: 36px;
   outline: 0;
-/*  padding: 0 2rem;*/
-/*  text-transform: uppercase;*/
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
   font-size: 2em;
@@ -78,6 +59,12 @@ ul li {
   width: 120%;
   text-transform: lowercase;
   margin-top: 25%;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .btn, .waves-effect, .waves-light{
+    height:76px;
+  }
 }
 
 /*nav bar */
@@ -112,6 +99,23 @@ nav .brand-logo {
   line-height: 64px;
   padding: 0 30px;
   text-align: left;
+}
+
+@media only screen and (min-width: 601px) {
+  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 104px;
+   /* line-height: 104px;*/
+  }
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+}
+
+ul li {
+  list-style-type: none;
+  display:inline;
 }
 
 /*LOGIN PAGE*/
@@ -162,12 +166,6 @@ nav .brand-logo {
   margin: auto;
 }
 
-@media only screen and (max-device-width: 480px) {
-  .btn, .waves-effect, .waves-light{
-    height:76px;
-  }
-}
-
 .group-avatars{
   border-radius: 100%;
   margin:6px;
@@ -206,11 +204,8 @@ nav .brand-logo {
   border: none;
   border-radius: 12px;
   display: inline-block;
- /* height: 36px;*/
   line-height: 36px;
   outline: 0;
-/*  padding: 0 2rem;*/
-/*  text-transform: uppercase;*/
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
   font-size: 2em;
@@ -241,8 +236,7 @@ nav .brand-logo {
 
 /*errors*/
 .errors{
-  text-align:center;/*
-  background-color: rgba(255,255,255,0.3);*/
+  text-align:center;
   margin: 0 auto;
   display: inherit;
   width: 75%;
@@ -276,7 +270,6 @@ nav .brand-logo {
   background-color: whitesmoke;
   opacity: 0.7;
   padding: 3%;
-/*  margin: 2%;*/
   width: 120%;
   border: none;
   border-radius: 12px;
@@ -288,6 +281,7 @@ nav .brand-logo {
   font-family: 'Quicksand';
 }
 
+
 .house-form{
   margin-top: 21%;
 }
@@ -297,6 +291,8 @@ nav .brand-logo {
   margin-right: auto;
 }
 
+
+/*no event page*/
 .no-event {
   min-height: 200px;
 }
@@ -306,6 +302,12 @@ nav .brand-logo {
   display: inline-block;
 }
 
+.event-points {
+  display: inline;
+  color: #F25B77;
+}
+
+/*fact divs*/
 .water-fact{
   background-color: whitesmoke;
   opacity: 0.7;
@@ -318,6 +320,12 @@ nav .brand-logo {
   color: #333b3d;
   position:absolute;
   margin-bottom: 20px;
+}
+
+#event-sentence {
+  width: 100%;
+  text-align:center;
+  margin-top: -18px;
 }
 
 #fact{
@@ -348,15 +356,4 @@ span {
 .thumbs{
   width: 100%;
   text-align:center;
-}
-
-#event-sentence {
-  width: 100%;
-  text-align:center;
-  margin-top: -18px;
-}
-
-.event-points {
-  display: inline;
-  color: #F25B77;
 }
