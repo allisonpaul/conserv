@@ -168,7 +168,9 @@ var LineGraph = React.createClass({
         if(this.state.data != undefined) {
             if(this.state.data.data.length === 0) {
                 return (
-                    <span className="no-events-house"> You currently have no events </span>
+                    <div className="no-events-notice">  
+                        You currently have no events 
+                    </div>
                 )
             } else {
                 return (
@@ -182,7 +184,7 @@ var LineGraph = React.createClass({
         return(
             <div>
                 <div className = "graph-titles" >
-                    < h1>Event log < /h1>
+                    <h1>Progress</h1>
                 </div>
                 { this.showChart() }
                 <div className="fact">
