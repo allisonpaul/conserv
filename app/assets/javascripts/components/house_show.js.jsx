@@ -34,7 +34,8 @@ var House = React.createClass({
         var errors = response.errors
         $(".errors").append(`<li> ${errors} </li>`)
       } else {
-        console.log(this.props) //not refreshing page with new member on list
+        console.log(this.props)
+        $(".errors").find("li").remove()
         var success = response.success
         $(".errors").append(`<li> ${success} </li>`)
         this.props.onAction('house', {houseMember: true})
@@ -47,9 +48,7 @@ var House = React.createClass({
       if (this.state.data.data[0].events.length === 0) {
         return (
           <div className="no-events-notice">
-            <div className="no-events-notice">
-              You currently have no events
-            </div>
+            You currently have no events
           </div>
         )
       } else {
