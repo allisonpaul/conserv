@@ -19,12 +19,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
-    render json: {  email: @user.email,
-                    username: @user.username,
-                    events: @user.events,
-                    averagePoints: @user.average_points
-                  }
+    @user = current_user
+    if @user
+      render json: {  email: @user.email,
+                      username: @user.username,
+                      events: @user.events,
+                      averagePoints: @user.average_points
+                    }
+    else
+      render json: {status: 422}
+    end
   end
 
   private
