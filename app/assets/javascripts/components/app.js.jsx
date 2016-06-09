@@ -8,13 +8,27 @@ var App = React.createClass({
       message: undefined,
       houseID: undefined,
       currentUserName: undefined,
-      newUser: false
+      newUser: false,
+      userAveragePoints: 0,
     }
+  },
+
+  getUserPoints: function() {
+      $.ajax({
+          url: '/users/show',
+          type: "GET"
+      }).success(function(response){
+          console.log(response.averagePoints)
+          this.setState({
+              userAveragePoints: response.averagePoints
+          });
+      }.bind(this))
   },
 
   updateView: function(newView, options = {}) {
     if ($('.lineChartContainer') != []) { $('.lineChartContainer').remove() }
-    $('.pieChartContainer').remove()
+    $('.pieChartContainer').remove();
+    this.getUserPoints();
     this.setState({ screen: newView });
     this.setState(options);
     // this.updateScreenContent();
@@ -22,11 +36,7 @@ var App = React.createClass({
 
   logout: function() {
     this.logoutServer();
-    this.setState({
-      screen: "login",
-      userLoggedIn: false,
-      currentUserID: undefined,
-    });
+    window.location.href = "http://conserv.herokuapp.com";
   },
 
   logoutServer: function() {
@@ -53,7 +63,7 @@ var App = React.createClass({
       case "claimEvent":
         return <ClaimEvent onAction={this.updateView} />
       case "lineGraph":
-        return <LineGraph onAction={this.updateView} />
+        return <LineGraph onAction={this.updateView} userAveragePoints={this.state.userAveragePoints} />
       case "pieGraph":
         return <PieGraph onAction={this.updateView} />
       case "barGraph":

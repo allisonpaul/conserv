@@ -77,7 +77,7 @@ ul li {
   height: 55px;
   width: 120%;
   text-transform: lowercase;
-  margin-top: 32%;
+  margin-top: 25%;
 }
 
 /*nav bar */
@@ -150,11 +150,11 @@ nav .brand-logo {
 
 /*graph pages*/
 .graph-titles {
-  font-size: 2.5em;
+  font-size: 1.5em;
   text-align: center;
   color: #2D363A;
   font-family: 'Montserrat', sans-serif;
-  padding: 5%;
+  padding: 1%;
 }
 
 .event-button-container{
@@ -170,7 +170,7 @@ nav .brand-logo {
 
 .group-avatars{
   border-radius: 100%;
-  margin:15px;
+  margin:6px;
 }
 
 /*CLAIM EVENT PAGE*/
@@ -189,13 +189,12 @@ nav .brand-logo {
   line-height: 54px;
   background-color: whitesmoke;
   opacity: 0.7;
-  padding: 3%;
   margin: 2%;
   width: 100%;
   border: none;
   border-radius: 12px;
   outline: 0;
-  padding: 0 2rem;
+  padding: 0 0.1rem;
   text-transform: uppercase;
   box-sizing: inherit;
   color: #333b3d;
@@ -312,12 +311,13 @@ nav .brand-logo {
   opacity: 0.7;
   width: 75%;
   padding:3%;
-  position:fixed;
   bottom: 0;
   border-radius: 8px;
   margin-left: 12.5%;
   text-align: center;
-  color: #333b3d
+  color: #333b3d;
+  position:absolute;
+  margin-bottom: 20px;
 }
 
 #fact{
@@ -350,3 +350,13 @@ span {
   text-align:center;
 }
 
+#event-sentence {
+  width: 100%;
+  text-align:center;
+  margin-top: -18px;
+}
+
+.event-points {
+  display: inline;
+  color: #F25B77;
+}

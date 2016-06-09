@@ -17,12 +17,14 @@ class SessionsController < ActionController::Base
         render json: {  user_id: session[:user_id],
                         house_member: false,
                         currentUserName: @user.username,
+                        userAveragePoints: @user.average_points
                       }
       else
         session[:user_id] = @user.id
         render json: {  user_id: session[:user_id],
                         house_member: true,
                         currentUserName: @user.username,
+                        userAveragePoints: @user.average_points
                       }
       end
     else

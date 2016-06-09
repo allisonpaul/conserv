@@ -3,7 +3,8 @@
 var LineGraph = React.createClass({
     getInitialState: function() {
         return {
-            data: undefined
+            data: undefined,
+            userAverageScore: 0,
         }
     },
 
@@ -132,7 +133,7 @@ var LineGraph = React.createClass({
             .attr('fill', 'whitesmoke')
             .attr('stroke', 'steelblue')
             .attr('stroke-width', '3')
-            .on('mouseover', tip.show)
+            .on('click', tip.show)
             .on('mouseout', tip.hide);
 
 
@@ -162,6 +163,7 @@ var LineGraph = React.createClass({
             .attr('transform', 'translate(' + width + ', 0)')
     },
 
+
     showChart: function() {
         if(this.state.data != undefined) {
             if(this.state.data.data.length === 0) {
@@ -177,12 +179,17 @@ var LineGraph = React.createClass({
     },
 
     render: function() {
-        return (
+        return(
             <div>
-               < div className = "graph-titles" >
-                    < h1 > History < /h1>
-                </div >
+                <div className = "graph-titles" >
+                    < h1>Event log < /h1>
+                </div>
                 { this.showChart() }
+                <div className="fact">
+                    <p className="water-fact"> The average American shower is 16.5 points (8.2 minutes).
+                    <br/>
+                    Your average is {this.props.userAveragePoints} points. </p>
+                </div>
             </div>
         )
     },

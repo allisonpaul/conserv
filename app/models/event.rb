@@ -76,7 +76,7 @@ class Event < ActiveRecord::Base
           sub_array << data_point
         end
       end
-      master_array << sub_array if sub_array.length >= 4
+      master_array << sub_array if sub_array.length > 4
     end
     master_array
   end

@@ -21,7 +21,7 @@ class DevicesController < ApplicationController
     end
 
   if @device && @exist_users && @exist_house
-      @found = "This device is already linked to the #{@exist_house.name} house, would you like to join?"
+      @found = "Join #{@exist_house.name}?"
       @id = @exist_house.id
       current_user.device_id = @device.id
       current_user.save
