@@ -1,9 +1,10 @@
 class EventsController < ApplicationController
   def index
     all_events = Event.where(device_id: current_user.device_id)
+    ordered_events = all_events.order(:start_time)
     unclaimed_events = []
 
-    all_events.each do |event|
+    ordered_events.each do |event|
       if event.event_claimer_id == nil
         unclaimed_events << { event_date: event.start_time.strftime('%a, %b %d'),
                               event_time: event.start_time.strftime('%I:%M %p'),

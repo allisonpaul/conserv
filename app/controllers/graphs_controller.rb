@@ -40,6 +40,10 @@ class GraphsController < ApplicationController
       out_array << output
     end
 
+    if out_array.length > 7
+      out_array.shift until out_array.length == 7
+    end
+
     render json: {data: out_array}
   end
 
