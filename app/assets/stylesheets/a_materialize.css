@@ -2646,6 +2646,7 @@ html {
 
 ul {
   list-style-type: none;
+  text-align: center;
 }
 
 ul.browser-default {

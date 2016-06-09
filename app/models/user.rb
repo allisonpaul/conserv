@@ -9,5 +9,14 @@ class User < ActiveRecord::Base
   # validates :password_digest, { length: { minimum: 4}}
   # validates :email, { uniqueness: true }
 
+  def average_points
+    events = self.events
+    if events.length > 0
+      return (events.sum(:points))/events.length
+    else
+      return 0
+    end
+  end
+
 
 end

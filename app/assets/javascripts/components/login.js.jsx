@@ -17,7 +17,9 @@ var Login = React.createClass({
           currentUserID: response.user_id,
           userLoggedIn: true,
           houseMember: response.house_member,
-          currentUserName: response.currentUserName, })
+          currentUserName: response.currentUserName,
+          userAveragePoints: response.userAveragePoints
+        })
       }
     }.bind(this))
   },

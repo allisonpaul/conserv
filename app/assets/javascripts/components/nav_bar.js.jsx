@@ -26,7 +26,7 @@ var NavBar = React.createClass ({
     return (
       <nav>
         <div className="nav-wrapper">
-          <a href="#" className="brand-logo"><ConservLogo/></a>
+          <a onClick={this.handleClick.bind(null, "userShow")} href="#" className="brand-logo"><ConservLogo/></a>
           <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
           <ul className="side-nav navtext" id="mobile-demo">
             {this.navOptions()}

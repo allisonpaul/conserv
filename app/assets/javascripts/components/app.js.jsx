@@ -8,7 +8,8 @@ var App = React.createClass({
       message: undefined,
       houseID: undefined,
       currentUserName: undefined,
-      newUser: false
+      newUser: false,
+      userAveragePoints: 0,
     }
   },
 
@@ -53,7 +54,7 @@ var App = React.createClass({
       case "claimEvent":
         return <ClaimEvent onAction={this.updateView} />
       case "lineGraph":
-        return <LineGraph onAction={this.updateView} />
+        return <LineGraph onAction={this.updateView} userAveragePoints={this.state.userAveragePoints} />
       case "pieGraph":
         return <PieGraph onAction={this.updateView} />
       case "barGraph":
