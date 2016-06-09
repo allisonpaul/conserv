@@ -21,7 +21,7 @@ var ClaimEvent = React.createClass({
       <div>
          < div className="graph-titles">
          <h1>Claim an event</h1></div>
-         <p id="event-sentence">recent events from your house.</p>
+         <p id="event-sentence">recent events from your house</p>
          <EventList events={this.state.data} />
       </div>
     );

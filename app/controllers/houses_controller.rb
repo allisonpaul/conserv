@@ -1,7 +1,7 @@
 class HousesController < ApplicationController
 
   def index
-    @user = User.find(current_user.id)
+    @user = current_user
     @house = @user.house
     @house_members = User.where(house_id: @house.id)
     data = []
@@ -16,8 +16,13 @@ class HousesController < ApplicationController
   end
 
   def create
+    if params[:name] == ""
+      render json: {errors: "Cannot be blank!"}
+      return false
+    end
+
     @house = House.find_or_create_by(name: params[:name])
-    @user = User.find(current_user.id)
+    @user = current_user
     if @user && @user.house_id == nil
       @user.house_id = @house.id
       @user.save

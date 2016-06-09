@@ -30,6 +30,7 @@ var House = React.createClass({
     }).success(function(response){
       this.getHouseData();
       if (response.errors) {
+        $(".errors").find("li").remove()
         var errors = response.errors
         $(".errors").append(`<li> ${errors} </li>`)
       } else {
@@ -45,7 +46,11 @@ var House = React.createClass({
     if(this.state.data.data.length === 1) {
       if (this.state.data.data[0].events.length === 0) {
         return (
-          <span className="no-events-house"> You currently have no events </span>
+          <div className="no-events-notice">
+            <div className="no-events-notice">
+              You currently have no events
+            </div>
+          </div>
         )
       } else {
         return ( <PieGraph /> )

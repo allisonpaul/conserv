@@ -8,6 +8,7 @@ var HouseForm = React.createClass({
       data: data
     }).success(function(response){
       if (response.errors) {
+        $(".errors").find("li").remove()
         var errors = response.errors
         $(".errors").append(`<li> ${errors} </li>`)
       } else {
@@ -66,8 +67,8 @@ var HouseForm = React.createClass({
                   <label>House name</label>
                 </div>
                 <div className="input-field col s10 center-align">
-                  <button className="other-buttons" type="submit" name="action">
-                  Submit
+                  <button className="register-button" type="submit" name="action">
+                  Add
                   </button>
                 </div>
               </div>
