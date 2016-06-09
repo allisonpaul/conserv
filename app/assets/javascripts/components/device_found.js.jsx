@@ -9,7 +9,13 @@ var DeviceFound = React.createClass({
       type: 'POST',
       data: { id: this.props.houseID }
     }).success(function(response){
-      this.props.onAction(destination, {houseMember: true});
+      if (response.errors) {
+        $(".errors").find("li").remove()
+        var errors = response.errors
+        $(".errors").append(`<li> ${errors} </li>`)
+      } else {
+        this.props.onAction(destination, {houseMember: true})
+      }
     }.bind(this));
   },
 

@@ -8,6 +8,7 @@ var HouseForm = React.createClass({
       data: data
     }).success(function(response){
       if (response.errors) {
+        $(".errors").find("li").remove()
         var errors = response.errors
         $(".errors").append(`<li> ${errors} </li>`)
       } else {

@@ -28,8 +28,13 @@ class DevicesController < ApplicationController
       render json: { found: @found, id: @id }
     else
       @new_device = Device.create(code: params[:code])
-      current_user.device_id = @new_device.id
-      current_user.save
+        if @new_device
+          current_user.device_id = @new_device.id
+          current_user.save
+        else
+          @errors = @user.errors.full_messages
+          render json: { errrors: @errors }
+        end
     end
   end
 

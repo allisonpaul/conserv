@@ -9,8 +9,9 @@ var Register = React.createClass({
     })
     request.done(function(response){
       if (response.errors) {
+        $(".errors").find("li").remove()
         var errorsList = response.errors.map(function(error, i) {
-          $(".errors").append(`<li> ${error} </li>`)
+        $(".errors").append(`<li> ${error} </li>`)
         })
       } else {
         this.props.onAction('device', {
@@ -42,16 +43,16 @@ var Register = React.createClass({
               <input type="password" className="validate" name="user[password]"/>
               <label>Password</label>
             </div>
+            <div className="errors-div">
+              <ul className="errors">
+              </ul>
+            </div>
             <div className="input-field col s10 center-align">
               <button className="btn waves-effect waves-light" type="submit" name="action">register
               </button>
             </div>
           </div>
         </form>
-          <div className="errors-div">
-            <ul className="errors">
-            </ul>
-          </div>
       </div>
     )
   }
